@@ -39,6 +39,7 @@ public class LogSanitizer {
         // return input.replace("\r", "\\r").replace("\n", "\\n");
         // Option 2:
         return input.replaceAll("[\r\n]", "");
+        return input.replace("\r", "\\r").replace("\n", "\\n");
     }
 }
 ```
