@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion> <!-- This element specifies the version of the POM model -->
+    <groupId>com.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <description>Example Project</description>
+
+    <modules> <!-- sub modules should be listed here with path to each module -->
+        <module>module1</module>
+    </modules>
+
+    <build>
+        <pluginManagement> 
+         <!-- used to centrally manage plugin versions and configurations that can be inherited by child modules 
+                 without applying the plugins directly -->
+            <plugins>
+                <plugin>
+                    <!-- Checkstyle plugin for ensuring code style-->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${maven.checkstyleplugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>validate</id>
+                            <phase>validate</phase>
+                            <configuration>
+                                <configLocation>
+                                    https://raw.githubusercontent.com/wso2/code-quality-tools/v1.3/checkstyle/checkstyle.xml
+                                </configLocation>
+                                <suppressionsLocation>
+                                    https://raw.githubusercontent.com/wso2/code-quality-tools/v1.3/checkstyle/suppressions.xml
+                                </suppressionsLocation>
+                                <encoding>UTF-8</encoding>
+                                <consoleOutput>true</consoleOutput>
+                                <failsOnError>true</failsOnError>
+                                <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                            </configuration>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- Find Sec Bugs plugin with Maven Spotbugs plugin for checking security bugs in the code-->
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>${spotbugs-maven-plugin.version}</version>
+                    <configuration>
+                        <effort>Max</effort>
+                        <threshold>Low</threshold>
+                        <failOnError>false</failOnError>
+                        <plugins>
+                            <plugin>
+                                <groupId>com.h3xstream.findsecbugs</groupId>
+                                <artifactId>findsecbugs-plugin</artifactId>
+                                <version>${findsecbugs-plugin.version}</version>
+                            </plugin>
+                        </plugins>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>analyze-compile</id>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <!-- Maven Compiler plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Bundle plugin for building OSGI bundles -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${maven.bundle.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <!-- Disables the use of an OBR: OSGI Bundle Repository for managing this bundle.
+                    This bundle will not be published to or retrieved from an OBR. -->
+                    <obrRepository>NONE</obrRepository>
+<!--                    <instructions>-->
+<!--                        <SCM-Revision>${buildNumber}</SCM-Revision>-->
+<!--                    </instructions>-->
+                </configuration>
+            </plugin>
+
+            <!-- Checkstyle plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+
+            <!-- Spotbugs plugin -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- Dependency Check plugin: for checking vulnerabilities of dependencies-->
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>10.0.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <dependencies>
+        <!-- HTTP Client -->
+        <dependency>
+            <groupId>org.wso2.orbit.org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${apache.httpclient.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+
+
+    <properties>
+        <!-- Java Compiler Settings -->
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+        <!-- Maven Plugin Versions -->
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <maven.bundle.plugin.version>2.4.0</maven.bundle.plugin.version>
+        <maven.scr.plugin.version>1.22.0</maven.scr.plugin.version>
+
+        <!-- OSGi Import Package Version Ranges -->
+        <osgi.framework.imp.pkg.version.range>[1.7.0,2.0.0)</osgi.framework.imp.pkg.version.range>
+        <osgi.service.component.imp.pkg.version.range>[1.2.0,2.0.0)</osgi.service.component.imp.pkg.version.range>
+
+        <!-- Apache HttpClient Version -->
+        <apache.httpclient.version>4.3.6.wso2v2</apache.httpclient.version>
+
+        <!-- Checkstyle Plugin Version -->
+        <maven.checkstyleplugin.version>3.1.0</maven.checkstyleplugin.version>
+
+        <!-- Spotbugs & FindSecBugs Plugin Version -->
+        <spotbugs-maven-plugin.version>4.8.6.4</spotbugs-maven-plugin.version>
+        <findsecbugs-plugin.version>1.12.0</findsecbugs-plugin.version>
+    </properties>
+
+    <repositories>
+        <!-- WSO2 Public Repository -->
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 Public Repository</name>
+            <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+</project>
