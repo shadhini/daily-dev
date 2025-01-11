@@ -2,23 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion> <!-- This element specifies the version of the POM model -->
     <groupId>com.example</groupId>
     <artifactId>example</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <modules>
-        <module>module1</module>
+    <modules> <!-- sub modules should be listed here with path to each module -->
         <module>module1</module>
     </modules>
 
     <build>
-        <pluginManagement>
+        <pluginManagement> 
+         <!-- used to centrally manage plugin versions and configurations that can be inherited by child modules 
+                 without applying the plugins directly -->
             <plugins>
-
                 <plugin>
-                    <!-- Checkstyle plugin -->
+                    <!-- Checkstyle plugin for ensuring code style-->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${maven.checkstyleplugin.version}</version>
@@ -45,7 +45,7 @@
                     </executions>
                 </plugin>
 
-                <!-- Find Sec Bugs plugin -->
+                <!-- Find Sec Bugs plugin with Maven Spotbugs plugin for checking security bugs in the code-->
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
