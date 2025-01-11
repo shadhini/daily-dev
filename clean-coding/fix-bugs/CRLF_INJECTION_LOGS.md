@@ -6,9 +6,7 @@
 CRLF injection in logs is a security vulnerability that can allow attackers to manipulate log files, potentially injecting malicious content or misleading log entries.
 
 #### Solution
-```
-sanitize any user input or external data before logging it
-```
+`sanitize any user input or external data before logging it`
 
 
 ##### Identifying Log Injections Points
