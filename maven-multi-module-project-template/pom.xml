@@ -7,6 +7,7 @@
     <artifactId>example</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
+    <description>Example Project</description>
 
     <modules> <!-- sub modules should be listed here with path to each module -->
         <module>module1</module>
