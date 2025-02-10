@@ -39,4 +39,4 @@ Permanently change the maximum number of connections (Persists After MySQL Resta
 
 2. Restart the MySQL server:
 
-       sudo service mysql restart
+       launchctl restart mysql
