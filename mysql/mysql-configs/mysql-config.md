@@ -39,4 +39,18 @@ Permanently change the maximum number of connections (Persists After MySQL Resta
 
 2. Restart the MySQL server:
 
-       launchctl restart mysql
+   * If mysql installation location is `/usr/local/mysql/bin/mysql` then,
+        
+            cd /usr/local/mysql/support-files
+            sudo ./mysql.server restart
+   
+   * If you are managing MySQL using `launchd` on macOS, 
+     you can restart MySQL using `launchctl` instead of `mysql.server`.
+     
+     * Unload the MySQL service:
+     
+            sudo launchctl unload -w /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist
+
+     * Load the MySQL service:
+     
+            sudo launchctl load -w /Library/LaunchDaemons/com.oracle.oss.mysql.mysqld.plist
