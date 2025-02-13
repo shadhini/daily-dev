@@ -3,7 +3,7 @@
 ---
 MySQL Configuration file: `my.cnf` or `my.ini`
 * Default options are read from the following mysql configuration files in the given order:
-    1. /etc/my.cnf
+    1. /etc/my.cnf -- preferred location 
     2. /etc/mysql/my.cnf
     3. /usr/local/mysql/etc/my.cnf
     4. ~/.my.cnf
@@ -22,9 +22,9 @@ Figuring out mysql configuration file location on macOS
 -
         /usr/local/mysql/bin/mysql
 
-If still there's no existing `my.cnf` file, create one for current user in ~/.my.cnf or in the MySQL installation directory.
+If still there's no existing `my.cnf` file, create one in the `/etc` directory with `sudo` privileges.
   
-      ~/.my.cnf
+      /etc/my.cnf
 
 
 ---
