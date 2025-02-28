@@ -2,3 +2,7 @@
 /.idea/
 *.iml
 */target/
+
+# Jekyll site related files
+/docs/.jekyll-cache/
+/docs/_site/

@@ -24,11 +24,3 @@ This repository is currently under development, but stay tuned for a treasure tr
 We are going to bring you a comprehensive and user-friendly reference that will boost your productivity and keep your development process smooth and efficient. 
 
 ---
-
-## [Tech Catalog](docs/TechCatalog.md)
-
-
-
-
-
-
