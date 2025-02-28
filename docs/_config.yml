@@ -1,0 +1,54 @@
+baseurl: "/daily-dev"
+title: "DailyDev" # site title / name
+
+markdown_ext: markdown,mkdown,mkdn,mkd,md
+
+# markdown processor - kramdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  auto_id_prefix: "id-"
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  gfm_quirks:
+    - no_auto_typographic
+    - paragraph_end
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    guess_lang: true
+    css_class: "highlight"
+
+permalink: /:slugified_categories/:slug/
+
+collections:
+  technologies:
+    output: true
+    permalink: /:collection/:name/
+  topics:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "doc"
+      show_sidebar: true
+      toc: true
+  - scope:
+      path: ""
+      type: "technologies"
+    values:
+      layout: "technology"
+      show_sidebar: true
+      toc: true
+  - scope:
+      path: ""
+      type: "topics"
+    values:
+      layout: "topic"
+      show_sidebar: true
+      toc: true
