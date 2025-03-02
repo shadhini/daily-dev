@@ -132,8 +132,9 @@ z" stroke="currentColor" stroke-width="50" fill="none"></path></svg>
                 </ul>
             </div>
             <div class="col-2 offset-lg-1">
-                <h5 style="margin-top: 0" >Links</h5>
+                <h5 style="margin-top: 0" >Tech Catalog</h5>
                 <ul class="list-unstyled">
+                    <li class="mb-2"><a href="{{ site.baseurl }}/tech-catalog/">Tech Catalog</a></li>
                     {% for item in site.data.navigation %}
                     <li class="mb-2"><a href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a></li>
                     {% endfor %}
