@@ -2,6 +2,7 @@
 layout: doc
 ---
 
+<!-- Technology Metadata -->
 <table class="table table-hover table-bordered">
     <thead>
     <tr>
@@ -13,24 +14,28 @@ layout: doc
     </thead>
     {% include technology-metadata.html %}
 </table>
-<div class="accordion-item">
-        <span class="accordion-header">
-          <button class="accordion-button text-primary-emphasis" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImportant" aria-expanded="true" aria-controls="collapseImportant">
-             Important Links
-          </button>
-        </span>
-    <div id="collapseImportant" class="accordion-collapse collapse">
-        <div class="accordion-body">
-            <!-- Important Links -->
-            {% if site.data.technologies[page.slug].important %}
-            <strong class="text-success-emphasis"> Important Links: </strong>
-            <br>
-            {% for link in site.data.technologies[page.slug].important %}
-            <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
-            {% endfor %}
-            <br>
-            {% endif %}
+
+<!-- Important Links -->
+{% if site.data.technologies[page.slug].important %}
+<div class="accordion" id="important">
+    <div class="accordion-item">
+            <span class="accordion-header">
+              <button class="accordion-button text-primary-emphasis" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImportant" aria-expanded="true" aria-controls="collapseImportant">
+                 Important Links
+              </button>
+            </span>
+        <div id="collapseImportant" class="accordion-collapse collapse" data-bs-parent="#important">
+            <div class="accordion-body">
+                <strong class="text-success-emphasis"> Important Links: </strong>
+                <br>
+                {% for link in site.data.technologies[page.slug].important %}
+                <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+                {% endfor %}
+                <br>
+            </div>
         </div>
     </div>
 </div>
+{% endif %}
+
 {{ content }}

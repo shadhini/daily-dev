@@ -2,8 +2,8 @@
 <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
 
     <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
-        {% if page.collection.label %}
-        {% assign sidebar =  page.collection.label | append: '-sidebar' %}
+        {% if page.collection %}
+        {% assign sidebar =  page.collection | append: '-sidebar' %}
         {% else %}
         {% assign sidebar =  page.url | split: "/" | slice: -1, 1 | first  | append: '-sidebar' %}
         {% endif %}
@@ -47,16 +47,19 @@
         {% endif %}
         <li class="bd-links-span-all mt-1 mb-3 mx-4 border-top"></li>
         {% endfor %}
-        {% if page.collection.label %}
-        {% if site.data[page.collection.label].[page.slug].important %}
-        <strong class="bd-links-heading d-flex w-100 align-items-top fw-semibold">
-            <i class="bi me-2 bi-link-45deg" style="color: var(--bs-orange);"></i>
+
+        <!-- Important Links -->
+        {% if page.collection %}
+        {% if site.data[page.collection].[page.slug].important %}
+        <strong class="bd-links-heading d-flex w-100 align-items-top fw-semibold text-info">
+            <i class="bi me-2 bi-star-fill" style="color: var(--bs-blue);"></i>
             Important Links
         </strong>
         <li class="bd-links-group py-2">
             <ul class="list-unstyled fw-normal pb-2 small">
-                {% for link in site.data[page.collection.label].[page.slug].important %}
+                {% for link in site.data[page.collection].[page.slug].important %}
                 <!-- Check if the current page is the active page -->
+                {% assign is_active = false %}
                 {% if page.slug == link.url %}
                 {% assign is_active = true %}
                 {% endif %}
@@ -70,5 +73,6 @@
         </li>
         {% endif %}
         {% endif %}
+
     </ul>
 </nav>
