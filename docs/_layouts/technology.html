@@ -26,12 +26,9 @@ layout: doc
             </span>
         <div id="collapseImportant" class="accordion-collapse collapse" data-bs-parent="#important">
             <div class="accordion-body">
-                <strong class="text-success-emphasis"> Important Links: </strong>
-                <br>
                 {% for link in site.data.technologies[page.slug].important %}
                 <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
                 {% endfor %}
-                <br>
             </div>
         </div>
     </div>

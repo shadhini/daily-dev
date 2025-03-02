@@ -25,6 +25,7 @@
                     </a>
                 </span>
                 {% endfor %}
+                <br>
                 {% endif %}
                 <br>
                 <!-- Related Technologies -->
@@ -39,8 +40,8 @@
                     </a>
                 </span>
                 {% endfor %}
-                {% endif %}
                 <br>
+                {% endif %}
                 <!-- Related Topics -->
                 {% if site.data.technologies[technology.slug].topics %}
                 <br>
@@ -57,6 +58,8 @@
                 {% endif %}
                 <!-- Important Links -->
                 {% if site.data.technologies[technology.slug].important %}
+                <br>
+                <br>
                 <strong class="text-success-emphasis"> Important Links: </strong>
                 <br>
                 {% for link in site.data.technologies[technology.slug].important %}

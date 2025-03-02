@@ -15,7 +15,6 @@
                 </h2>
                 <!-- Related Technologies -->
                 {% if site.data.topics[topic.slug].technologies %}
-                <br>
                 <strong class="text-success-emphasis"> Related Technologies: </strong>
                 <br>
                 {% for technology in site.data.topics[topic.slug].technologies %}
@@ -44,6 +43,7 @@
                 {% endif %}
                 <!-- Important Links -->
                 {% if site.data.topics[topic.slug].important %}
+                <br>
                 <br>
                 <strong class="text-success-emphasis"> Important Links: </strong>
                 <br>

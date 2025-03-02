@@ -9,9 +9,9 @@ title: "Tech Catalog"
     <thead>
     <tr>
         <th></th>
-        <th class="text-success-emphasis">Important Links</th>
-        <th class="text-success-emphasis">Related Topics</th>
         <th class="text-success-emphasis">Similar Technologies</th>
+        <th class="text-success-emphasis">Related Technologies</th>
+        <th class="text-success-emphasis">Related Topics</th>
     </tr>
     </thead>
     <tbody>
@@ -19,10 +19,26 @@ title: "Tech Catalog"
         <tr>
             <!-- Technology Name -->
             <td><strong class="text-success-emphasis">{{ technology.title }}</strong></td>
-            <!-- Support Files -->
+            <!-- Similar Technologies -->
             <td>
-                {% for link in site.data.technologies[technology.slug].important %}
-                <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+                {% for similar_technology in site.data.technologies[technology.slug].similar-technologies %}
+                {% assign similar_technology_slug = similar_technology | slugify %}
+                <span class="badge bg-secondary">
+                    <a href="{{ site.baseurl }}/technologies/{{ similar_technology_slug }}" target="_blank" data-bs-theme="light">
+                        {{ similar_technology }}
+                    </a>
+                </span>
+                {% endfor %}
+            </td>
+            <!-- Related Technologies -->
+            <td>
+                {% for related_technology in site.data.technologies[technology.slug].related-technologies %}
+                {% assign related_technology_slug = related_technology | slugify %}
+                <span class="badge bg-secondary">
+                    <a href="{{ site.baseurl }}/technologies/{{ related_technology_slug }}" target="_blank" data-bs-theme="light">
+                        {{ related_technology }}
+                    </a>
+                </span>
                 {% endfor %}
             </td>
             <!-- Related Topics -->
@@ -35,17 +51,28 @@ title: "Tech Catalog"
                     </a>
                 </span>
                 {% endfor %}
-            </td>
-            <!-- Similar Technologies -->
-            <td>
-                {% for similar_technology in site.data.technologies[technology.slug].similar-technologies %}
-                {% assign similar_technology_slug = similar_technology | slugify %}
-                <span class="badge bg-secondary">
-                    <a href="{{ site.baseurl }}/technologies/{{ similar_technology_slug }}" target="_blank" data-bs-theme="light">
-                        {{ similar_technology }}
-                    </a>
-                </span>
-                {% endfor %}
+            </td>       
+        </tr>
+        <tr>
+            <td></td>
+            <!-- Important Links -->
+            <td colspan="3">
+                <div class="accordion" id="important{{ technology.slug }}">
+                    <div class="accordion-item">
+                            <span class="accordion-header">
+                              <button class="accordion-button text-primary-emphasis" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImportant{{ technology.slug }}" aria-expanded="true" aria-controls="collapseImportant{{ technology.slug }}">
+                                 Important Links
+                              </button>
+                            </span>
+                        <div id="collapseImportant{{ technology.slug }}" class="accordion-collapse collapse" data-bs-parent="#important{{ technology.slug }}">
+                            <div class="accordion-body">
+                                {% for link in site.data.technologies[technology.slug].important %}
+                                <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </td>
         </tr>
     {% endfor %}
@@ -59,7 +86,6 @@ title: "Tech Catalog"
     <thead>
     <tr>
         <th></th>
-        <th class="text-success-emphasis">Important Links</th>
         <th class="text-success-emphasis">Related Technologies</th>
         <th class="text-success-emphasis">Related Topics</th>
     </tr>
@@ -69,12 +95,6 @@ title: "Tech Catalog"
         <tr>
             <!-- Topic Name -->
             <td><strong class="text-success-emphasis">{{ topic.title }}</strong></td>
-            <!-- Support Files -->
-            <td>
-                {% for link in site.data.topics[topic.slug].important %}
-                <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
-                {% endfor %}
-            </td>
             <!-- Related Technologies -->
             <td>
                 {% for technology in site.data.topics[topic.slug].technologies %}
@@ -96,6 +116,28 @@ title: "Tech Catalog"
                     </a>
                 </span>
                 {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <!-- Important Links -->
+            <td colspan="2">
+                <div class="accordion" id="important{{ topic.slug }}">
+                    <div class="accordion-item">
+                            <span class="accordion-header">
+                              <button class="accordion-button text-primary-emphasis" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImportant{{ topic.slug }}" aria-expanded="true" aria-controls="collapseImportant{{ topic.slug }}">
+                                 Important Links
+                              </button>
+                            </span>
+                        <div id="collapseImportant{{ topic.slug }}" class="accordion-collapse collapse" data-bs-parent="#important{{ topic.slug }}">
+                            <div class="accordion-body">
+                                {% for link in site.data.topics[topic.slug].important %}
+                                <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </td>
         </tr>
     {% endfor %}

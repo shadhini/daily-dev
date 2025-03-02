@@ -12,3 +12,6 @@ static-site-generators:
     - "Web Development Technologies"
     - "Markdown Processors"
     - "CSS Frameworks"
+  important:
+    - name: Test Link
+      url: https://example.com
