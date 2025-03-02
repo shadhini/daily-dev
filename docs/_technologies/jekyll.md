@@ -223,6 +223,8 @@ defaults:
 
 # Directory Structure
 
+## Sample directory structure
+
 ```text
 .
 ├── docs: root gh pages publishing directory
@@ -237,10 +239,8 @@ defaults:
 │         │         │       * site.data.navigation
 │         │         ├── sidebar.yml: sidebar groups and items
 │         │         │       * site.data.sidebar
-│         │         ├── technologies.yml: technologies list with related topics & similar technologies
-│         │         │       * site.data.technologies
-│         │         └── topics.yml: topics list with related technologies & related topics
-│         │         │       * site.data.topics
+│         │         └── technologies.yml: data file for sample collection
+│         │                 * site.data.technologies
 │         ├── _includes: reusable code snippets
 │         │         ├── docs-sidebar.html: sidebar for documentation
 │         │         ├── footer.html: footer for the site
@@ -249,32 +249,16 @@ defaults:
 │         │         ├── scripts.html: JS scripts list
 │         │         ├── stylesheet.html: stylesheet list
 │         │         ├── svg-icons.html: SVG icons list
-│         │         ├── technologies-breadcrumbs.html: breadcrumbs for pages/docs related to technologies 
-│         │         │       * not used
-│         │         ├── technology-list-accordion.html: accordion list of all technologies & their metadata
-│         │         ├── technology-metadata.html: technology metadata for current technology page
-│         │         ├── topic-list-accordion.html: accordion list of all topics & their metadata
-│         │         ├── topic-metadata.html: topic metadata for current topic page
 │         │         ├── theme-toggler.html: theme/color mode toggler
 │         │         └── toc.html: TOC generator for markdown files
-│         │                 * only markdown content is correctly processed
-│         │                 * skipping/jumping heading levels distort output
 │         ├── _layouts: page layouts
 │         │         ├── base.html: base layout and structure
-│         │         ├── default.html: default layout 
-│         │         │       * single column - inherits from base
-│         │         ├── doc.html: 3 column layout for documentation with switchable & scrollable sidebar and toc 
-│         │         │       * inherits from base
-│         │         ├── landing-page.html: landing page layout with cover image 
-│         │         │       * inherits from base
-│         │         ├── technology.html
-│         │         │       * inherits from doc
-│         │         ├── topic.html
-│         │         │       * inherits from doc
 │         │         ├── post.html: layout for blog posts
-│         │         │       * inherits from doc
-│         │         └── author.html
-│         │                 * inherits from doc
+│         │         ├── author.html: layout for author pages
+│         │         ├── default.html: default layout inherited from base
+│         │         ├── doc.html: docs layout inherited from base with TOC and sidebar
+│         │         ├── landing-page.html: landing page layout with cover image 
+│         │         └── technology.html: layout for documents of sample collection named `technologies`
 │         ├── _sass: sass styling files
 │         │         ├── _clipboard-js.scss: styling for clipboard.js
 │         │         ├── _custom.scss: custom project styles
@@ -309,7 +293,6 @@ defaults:
 │         │         │       * post.title: post filename or front matter title
 │         │         │       * post.excerpt: first para of content
 │         │         ├── 2025-02-10-blog1-file-name.md
-│         │         ├── 2025-02-13-blog2-file-name.md
 │         │         └── 2025-02-15-jekyll-guide.md
 │         ├── _authors
 │         │         └── jill.md
@@ -318,28 +301,24 @@ defaults:
 │         │         │       * site.documents: documents list of all collections
 │         │         │       * site.<COLLECTION_NAME>
 │         │         └── <COLLECTION_ITEM>.md: sample collection item
-│         ├── _technologies
+│         ├── _technologies: sample collection with documents
 │         │         ├── bootstrap.md
 │         │         ├── jekyll.md
 │         │         └── tailwind-css.md
-│         ├── technologies
+│         ├── technologies: sample pages 
 │         │         └── bootstrap: sample extra/important notes on bootstrap
 │         │             ├── commands
 │         │             │         └── bootstrap-commands.md
 │         │             └── test-frameworks
 │         │                 ├── bootstrap-framework-2.md
 │         │                 └── bootstrap-framweok-1.md
-│         ├── _topics
-│         │         ├── css-frameworks.md
-│         │         └── web-development-technologies.md
 │         ├── about.md
 │         ├── authors.md
 │         ├── blogs.md: blogs (taken from /_posts) list view
-│         ├── tech-catalog.md: tabular technology and topic catalog
-│         ├── technologies.md: technology list
-│         ├── topics.md: topic list
+│         ├── technologies.md: sample page with documents in technology collection
 │         ├── index.md: home page
-│         ├── _site: generated site files
+│         ├── 404.html: custom 404 page
+│         └── _site: generated site files
 ├── LICENSE
 └── README.md
 
@@ -452,6 +431,99 @@ Attributes accessible via each document in a collection:
 # Layouts
 * no front matter
 * layouts can inherit from another layout when front matter included
+
+## Sample Base layout structure
+
+`_layouts/base.html`: base layout
+```html
+<!doctype html>
+<!-- Base Layout -->
+<html lang="en" data-bs-theme="light">
+    <head>
+        {% include head.html %}
+    </head>
+    <body>
+        <!-- Navigation Bar ------------------------------------------------------------------------------------ -->
+        {% include navigation.html %}
+        <!-- SVG Icons ----------------------------------------------------------------------------------------- -->
+        {% include svg-icons.html %}
+        <!-- Rest of the Content ----------------------------------------------------------------------------------- -->
+        {{ content }}
+        <footer>
+            <!-- Footer -------------------------------------------------------------------------------------------- -->
+            {% include footer.html %}
+        </footer>
+        <!-- JS Scripts -------------------------------------------------------------------------------------------- -->
+        {% include scripts.html %}
+    </body>
+</html>
+```
+
+`_includes/`: partial html files reused in the above layout
+- `_includes/head.html`: head section of the site (stylesheets, scripts, meta tags)
+```html
+<!-- This file is used to include the header of the website -->
+<!--  Site metadata -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- browser tab title -->
+<title>
+    {% if page.url == "/" %}
+        {{ site.title }}
+    {% else %}
+        {{ site.title }} | {{ page.title }}
+    {% endif %}
+</title>
+<!-- Scripts / JS Files -------------------------------------------------------------------------------------------- -->
+<!-- Script for toggling theme/ color mode -->
+<script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+<!-- Stylesheets / CSS Files --------------------------------------------------------------------------------------- -->
+{% include stylesheet.html %}
+```
+
+- `_includes/stylesheet.html`: stylesheet list
+```html
+<!-- Stylesheets / CSS Files -->
+<!-- Bootswatch lumen bootstrap theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lumen/bootstrap.min.css">
+<!-- custom CSS styles specific to the project:
+used alongside Bootstrap framework to provide additional customizations that are unique to the project -->
+<link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+```
+
+- `_includes/navigation.html`: menu bar navigation style
+```html
+<nav class="navbar navbar-expand-lg bg-primary sticky-top" data-bs-theme="dark">
+  .....
+</nav>
+```
+
+- `_includes/svg-icons.html`: SVG icons list
+```html
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="chevron-expand" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"></path>
+  </symbol>
+  .....
+</svg>
+```
+
+`_includes/footer.html`: footer for the site
+```html
+<footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+  .....
+</footer>
+```
+
+`_includes/scripts.html`: JS scripts list
+```html
+<!-- JS Scripts -->
+<!-- Bootstrap JS and Popper.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
+
+<!-- Include the copy-to-clipboard script for code snippets-->
+<script src="{{ '/assets/js/copy-to-clipboard.js' | relative_url }}"></script>
+```
 
 # Collections
 for each collection
@@ -740,6 +812,9 @@ bootstrap template: https://bootswatch.com/ : [Yeti](https://bootswatch.com/yeti
 //@import "main";
 ```
 
+`assets/js/`
+- `theme.js`: JS script for enabling switching between **_dark_** and **_light_** site color themes/modes
+
 `_includes/head.html`
 ```html
 <head>
@@ -799,19 +874,6 @@ to **reduce potential screen flickering** during reloading of the site.
 ### JavaScript Mixins
 - used to add properties and methods from one object to another
 - useful for sharing behavior between classes without using inheritance
-
-
-## Other CSS styles related files
-
-`assets/js/`
-- `theme.js`: JS script for enabling switching between **_dark_** and **_light_** site color themes/modes
-- `copy-to-clipboard.js`: JS script for copying code snippets to the clipboard
-
-`_includes/footer.html`
-- web page footer
-
-
----
 
 # Markdown Processor
 options: `kramdown` | `GFM` | `Markdown` | `HTML`
@@ -1060,7 +1122,7 @@ Using [Anchor.js](https://www.bryanbraun.com/anchorjs/)
 Using `Bootstrap's Scrollspy` component: JS plugin for automatically updating navigation components 
 based on scroll position to indicate which link is currently active in the viewport
 
-`_includes/scripts.html`: CDN for Bootstrap's JS file to be included as a script
+`_includes/scripts.html`: Add CDN for Bootstrap's JS file to be included as a script
 
 `_sass/_scrolling.scss`: to prevent focus from landing behind the sticky header, when navigating with the keyboard
 - specially useful when using navigation bars that stick to the top
@@ -1135,104 +1197,6 @@ usage
     it is rendered only once and then reused from cache.
 - Jekyll's `include` and `include_cached` tags are restricted to files within the `_includes` directory.
 
-
-# Reusable Templates
-
-## Technology Catalog
-main page: `tech-catlog.md`
-lists:
-- `technologies.md`
-- `topics.md`
-
-`_data`
-- `navigation.yml`
-  ```yaml
-  #.....
-  - name: "Tech Catalog"
-    link: /tech-catalog.html
-  ```
-- `technologies.yml`: list of topics for each technology
-- `topics.yml`: list of technologies for each topic
-
-`_layouts`
-- `technology.html`
-- `topic.html`
-
-`_includes`
-- `technology-metadata.html`: metadata for current technology page
-- `topic-metadata.html`: metadata for current topic page
-- `technology-list-accordion.html`: accordion list of all technologies & their metadata
-- `topic-list-accordion.html`: accordion list of all topics & their metadata
-
-`_technologies`: `.md` / `.html` per each technology
-- [e.g:] `bootstrap.md`
-- [e.g:] `tailwind-css.md`
-
-`_topics`: `.md` / `.html` per each topic
-- [e.g] `css-frameworks.html`
-- [e.g] `web-development-technologies.html`
-
-`_config.yml`
-  ```yaml
-  collections:
-    # .....
-    technologies:
-      output: true
-    topics:
-      output: true
-  
-  defaults:
-    # .....
-    - scope:
-        path: ""
-        type: "technologies"
-      values:
-        layout: "technology"
-    - scope:
-        path: ""
-        type: "topics"
-      values:
-        layout: "topic"
-  
-  ```
-
-## Landing Page layout with Image
-
-`_layouts/landing-page.html`: landing page layout
-
-`_sass/_custom.scss`: custom styles for cover page
-  ```scss
-  // custom cover page styles
-  .cover-page-container {
-    width: 100%;
-    overflow: hidden;
-    max-width: 100%;
-  }
-  .cover-page-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-width: 100%;
-  }
-  ```
-
-`assets/css/styles.scss`
-  ```scss
-  ---
-  ---
-  @import "custom";
-  ```
-
-`assets/images/landing-page-cover-image.png`: landing page image
-
-`index.md`: reference the landing-page layout
-  ```markdown
-  ---
-  ....
-  layout: landing-page
-  ---
-  ```
-
 ## SVG Icons
 
 `_includes/svg-icons.html`: include all the SVG icons in a common html file
@@ -1262,4 +1226,15 @@ lists:
 `<CODE_SNIPPET_WITH_SVG_ICON>.html`: reusing the SVG icon wherever needed
 ```html
 <svg class="bi" role="img" aria-label="Copy"><use xlink:href="#clipboard"/></svg>
+```
+
+# 404 Not Found Page
+
+`404.html`: custom 404 page at root directory of the github pages publishing directory
+
+## Note:
+- For this to work permalink should be set to `pretty` in `_config.yml`
+  `_config.yml`
+```yaml
+permalink: pretty
 ```
