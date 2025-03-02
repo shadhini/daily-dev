@@ -1,3 +1,7 @@
+---
+title: Jekyll
+render_with_liquid: false
+---
 # Jekyll
 
 - static site generator: `jekyll`
