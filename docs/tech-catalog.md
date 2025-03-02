@@ -9,7 +9,7 @@ title: "Tech Catalog"
     <thead>
     <tr>
         <th></th>
-        <th class="text-success-emphasis">Support Files</th>
+        <th class="text-success-emphasis">Important Links</th>
         <th class="text-success-emphasis">Related Topics</th>
         <th class="text-success-emphasis">Similar Technologies</th>
     </tr>
@@ -20,7 +20,11 @@ title: "Tech Catalog"
             <!-- Technology Name -->
             <td><strong class="text-success-emphasis">{{ technology.title }}</strong></td>
             <!-- Support Files -->
-            <td></td>
+            <td>
+                {% for link in site.data.technologies[technology.slug].important %}
+                <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+                {% endfor %}
+            </td>
             <!-- Related Topics -->
             <td>
                 {% for topic in site.data.technologies[technology.slug].topics %}
@@ -55,7 +59,7 @@ title: "Tech Catalog"
     <thead>
     <tr>
         <th></th>
-        <th class="text-success-emphasis">Support Files</th>
+        <th class="text-success-emphasis">Important Links</th>
         <th class="text-success-emphasis">Related Technologies</th>
         <th class="text-success-emphasis">Related Topics</th>
     </tr>
@@ -66,7 +70,11 @@ title: "Tech Catalog"
             <!-- Topic Name -->
             <td><strong class="text-success-emphasis">{{ topic.title }}</strong></td>
             <!-- Support Files -->
-            <td></td>
+            <td>
+                {% for link in site.data.topics[topic.slug].important %}
+                <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+                {% endfor %}
+            </td>
             <!-- Related Technologies -->
             <td>
                 {% for technology in site.data.topics[topic.slug].technologies %}

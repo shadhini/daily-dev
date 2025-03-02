@@ -1,3 +1,14 @@
 # Note: technologies should be as same as the file name of the technology in the _technologies directory
 #   when slugified; when all non-alphanumeric characters are replaced by a hyphen.
-
+static-site-generators:
+  technologies:
+    - "Jekyll"
+    - "Hugo"
+    - "Gatsby"
+    - "MkDocs"
+    - "VuePress"
+    - "Next.js"
+  related-topics:
+    - "Web Development Technologies"
+    - "Markdown Processors"
+    - "CSS Frameworks"

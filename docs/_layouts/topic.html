@@ -5,11 +5,30 @@ layout: doc
 <table class="table table-hover table-bordered">
     <thead>
     <tr>
-        <th></th>
         <th class="text-success-emphasis">Related Technologies</th>
         <th class="text-success-emphasis">Related Topics</th>
     </tr>
     </thead>
     {% include topic-metadata.html %}
 </table>
+<div class="accordion-item">
+        <span class="accordion-header">
+          <button class="accordion-button text-primary-emphasis" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImportant" aria-expanded="true" aria-controls="collapseImportant">
+             Important Links
+          </button>
+        </span>
+    <div id="collapseImportant" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <!-- Important Links -->
+            {% if site.data.topics[page.slug].important %}
+            <strong class="text-success-emphasis"> Important Links: </strong>
+            <br>
+            {% for link in site.data.topics[page.slug].important %}
+            <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+            {% endfor %}
+            <br>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {{ content }}

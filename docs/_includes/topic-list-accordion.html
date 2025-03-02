@@ -42,6 +42,16 @@
                 </span>
                 {% endfor %}
                 {% endif %}
+                <!-- Important Links -->
+                {% if site.data.topics[topic.slug].important %}
+                <br>
+                <strong class="text-success-emphasis"> Important Links: </strong>
+                <br>
+                {% for link in site.data.topics[topic.slug].important %}
+                <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+                {% endfor %}
+                {% endif %}
+                <br>
             </div>
         </div>
     </div>

@@ -1,0 +1,19 @@
+- title: Home
+  icon: house-fill
+  icon_color: teal
+
+- title: Technologies
+  icon: bookmarks-fill
+  icon_color: cyan
+  pages:
+    - title: Jekyll
+
+- title: Topics
+  icon: bookmark-star-fill
+  icon_color: cyan
+  pages:
+    - title: Static Site Generators
+
+- title: Tech Catalog
+  icon: journal-bookmark-fill
+  icon_color: pink
