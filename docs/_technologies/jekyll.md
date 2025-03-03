@@ -409,12 +409,12 @@ all the variables set via the command line
 {{ site.collections | where: "label", "myCollection" | first }}
 ```
 
--`label`: name of the collection
--`docs`: array of documents in the collection
--`files`: array of static files in the collection
--`relative_directory`: path to the collection's source directory, relative to the site source
--`directory`: full path to the collection's source directory
--`output`: whether the collection's documents will be output as individual files
+- `label`: name of the collection
+- `docs`: array of documents in the collection
+- `files`: array of static files in the collection
+- `relative_directory`: path to the collection's source directory, relative to the site source
+- `directory`: full path to the collection's source directory
+- `output`: whether the collection's documents will be output as individual files
 
 Attributes accessible via each document in a collection:
 - `content`
@@ -461,54 +461,59 @@ Attributes accessible via each document in a collection:
 
 `_includes/`: partial html files reused in the above layout
 - `_includes/head.html`: head section of the site (stylesheets, scripts, meta tags)
-```html
-<!-- This file is used to include the header of the website -->
-<!--  Site metadata -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- browser tab title -->
-<title>
-    {% if page.url == "/" %}
-        {{ site.title }}
-    {% else %}
-        {{ site.title }} | {{ page.title }}
-    {% endif %}
-</title>
-<!-- Scripts / JS Files -------------------------------------------------------------------------------------------- -->
-<!-- Script for toggling theme/ color mode -->
-<script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
-<!-- Stylesheets / CSS Files --------------------------------------------------------------------------------------- -->
-{% include stylesheet.html %}
-```
+
+  ```html
+  <!-- This file is used to include the header of the website -->
+  <!--  Site metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- browser tab title -->
+  <title>
+      {% if page.url == "/" %}
+          {{ site.title }}
+      {% else %}
+          {{ site.title }} | {{ page.title }}
+      {% endif %}
+  </title>
+  <!-- Scripts / JS Files -------------------------------------------------------------------------------------------- -->
+  <!-- Script for toggling theme/ color mode -->
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+  <!-- Stylesheets / CSS Files --------------------------------------------------------------------------------------- -->
+  {% include stylesheet.html %}
+  ```
 
 - `_includes/stylesheet.html`: stylesheet list
-```html
-<!-- Stylesheets / CSS Files -->
-<!-- Bootswatch lumen bootstrap theme -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lumen/bootstrap.min.css">
-<!-- custom CSS styles specific to the project:
-used alongside Bootstrap framework to provide additional customizations that are unique to the project -->
-<link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
-```
+
+  ```html
+  <!-- Stylesheets / CSS Files -->
+  <!-- Bootswatch lumen bootstrap theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lumen/bootstrap.min.css">
+  <!-- custom CSS styles specific to the project:
+  used alongside Bootstrap framework to provide additional customizations that are unique to the project -->
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  ```
 
 - `_includes/navigation.html`: menu bar navigation style
-```html
-<nav class="navbar navbar-expand-lg bg-primary sticky-top" data-bs-theme="dark">
-  .....
-</nav>
-```
+
+  ```html
+  <nav class="navbar navbar-expand-lg bg-primary sticky-top" data-bs-theme="dark">
+    .....
+  </nav>
+  ```
 
 - `_includes/svg-icons.html`: SVG icons list
-```html
-<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-  <symbol id="chevron-expand" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"></path>
-  </symbol>
-  .....
-</svg>
-```
+
+  ```html
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="chevron-expand" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"></path>
+    </symbol>
+    .....
+  </svg>
+  ```
 
 `_includes/footer.html`: footer for the site
+
 ```html
 <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
   .....
@@ -516,6 +521,7 @@ used alongside Bootstrap framework to provide additional customizations that are
 ```
 
 `_includes/scripts.html`: JS scripts list
+
 ```html
 <!-- JS Scripts -->
 <!-- Bootstrap JS and Popper.js CDN -->
@@ -536,23 +542,24 @@ collection items can be accessed with: `site.<COLLECTION_NAME>` variable
 - collection items/documents: @ `_<COLLECTION_NAME>` directory 
 - layout for items/individual documents: `_layouts/<COLLECTION_ITEM_COMMON_NAME>.html`
 - collection configurations in `_config.yaml`
-```yaml
-  collections:
-    <COLLECTION_NAME>:
-      output: true
-      permalink: /:collection/:name/
-      # name: document's base filename slugified: downcased and
-      #   every sequence of non-alphanumeric character (including spaces) replaced by a hyphen
-  defaults:
-    - scope:
-        path: ""
-        type: "<COLLECTION_NAME>"
-      values:
-        layout: "<LAYOUT_FOR_COLLECTION_ITEM>"
-        # other custom variables for collection items/docs
-        show_sidebar: true 
-        toc: true
- ```
+
+  ```yaml
+    collections:
+      <COLLECTION_NAME>:
+        output: true
+        permalink: /:collection/:name/
+        # name: document's base filename slugified: downcased and
+        #   every sequence of non-alphanumeric character (including spaces) replaced by a hyphen
+    defaults:
+      - scope:
+          path: ""
+          type: "<COLLECTION_NAME>"
+        values:
+          layout: "<LAYOUT_FOR_COLLECTION_ITEM>"
+          # other custom variables for collection items/docs
+          show_sidebar: true 
+          toc: true
+   ```
 
 
 # Liquid Filters
@@ -1044,16 +1051,16 @@ Using [allejo/jekyll-toc](https://github.com/allejo/jekyll-toc)
 - TOC is generated based on <h1> to <h6> headings in the markdown content
 
 `_includes/toc.html`: liquid template for generating TOC
-- `https://github.com/allejo/jekyll-toc/blob/master/_includes/toc.html`
+- [allejo/jekyll-toc:toc.html](https://github.com/allejo/jekyll-toc/blob/master/_includes/toc.html)
 
 `_sass/_toc.scss`: styles for the table of contents
-- https://github.com/twbs/bootstrap/blob/90acd33350e1356194a364595cb07b65f24bd611/site/assets/scss/_toc.scss
+- [twbs/bootstrap:_toc.scss](https://github.com/twbs/bootstrap/blob/90acd33350e1356194a364595cb07b65f24bd611/site/assets/scss/_toc.scss)
 
 `_sass/_layout.scss`: styles for the layout with TOC
-- https://github.com/twbs/bootstrap/blob/90acd33350e1356194a364595cb07b65f24bd611/site/assets/scss/_layout.scss
+- [twbs/bootstrap:_layout.scss](https://github.com/twbs/bootstrap/blob/90acd33350e1356194a364595cb07b65f24bd611/site/assets/scss/_layout.scss)
 
 `_sass/vendor/_rfs.scss`: styles for responsive font sizes
-- https://github.com/twbs/bootstrap/blob/90acd33350e1356194a364595cb07b65f24bd611/scss/vendor/_rfs.scss
+- [twbs/bootstrap:vendor/_rfs.scss](https://github.com/twbs/bootstrap/blob/90acd33350e1356194a364595cb07b65f24bd611/scss/vendor/_rfs.scss)
 
 `_sass/_mixins.scss`: import RFS mixins required for styles
 ```scss
