@@ -30,7 +30,7 @@
 .bd-clipboard,
 .bd-edit {
   position: relative;
-  display: none;
+  display: inline-block;
   float: right;
 
   + .highlight {
