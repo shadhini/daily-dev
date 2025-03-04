@@ -1245,3 +1245,16 @@ usage
 ```yaml
 permalink: pretty
 ```
+
+# Add favicon to the site
+
+1. Design an image to be used as the favicon and decide the extension (`svg`, `png`, `ico`, etc.)
+2. Generate assets needed 
+   - For `png` or `ico` files:
+      - Create a favicon using a favicon generator tool like [RealFaviconGenerator](https://realfavicongenerator.net/)
+      - Download the favicon assets and code snippets required.
+   - For `svg` files:
+      - Design the favicon using a vector graphics editor 
+      - Save the file in the `svg` format
+      - You can edit the svg file with a text editor if needed
+3. Add favicon assets to the assets folder and update the layout file to include the favicon in the head section.
