@@ -18,5 +18,9 @@ jekyll:
     - "Rouge"
   important:
     - name: "Jekyll Tryouts"
+      url: "https://github.com/shadhini/jekyll-tryouts"
+    - name: "Jekyll Tryouts Demo Website"
       url: "https://shadhini.github.io/jekyll-tryouts/"
+    - name: "Jekyll Template for Technology Catalog"
+      url: "https://github.com/shadhini/daily-dev/releases/tag/tech-catalog-jekyll-template-v0.2"
 
