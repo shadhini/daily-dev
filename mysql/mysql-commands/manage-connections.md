@@ -1,8 +1,8 @@
-### Manage connections 
+# Manage connections 
 
 ---
 
-All the processes running in the MySQL server
+###### All the processes running in the MySQL server
 
     SHOW PROCESSLIST;
 
@@ -48,7 +48,7 @@ Maximum number of connections allowed by the MySQL server
 
 ---
 
-Maximum number of connections allowed for a specific user
+###### Maximum number of connections allowed for a specific user
 
      SELECT user, host, max_connections, max_user_connections FROM mysql.user WHERE user = 'ob-root';
 
@@ -62,7 +62,7 @@ Maximum number of connections allowed for a specific user
 
 ---
 
-Maximum number of connections allowed for a user by the MySQL server
+###### Maximum number of connections allowed for a user by the MySQL server
 
 
      SHOW VARIABLES LIKE 'max_user_connections';
@@ -77,13 +77,13 @@ Maximum number of connections allowed for a user by the MySQL server
 
 ---
 
-Change the maximum number of connections allowed for a user
+###### Change the maximum number of connections allowed for a user
 
      ALTER USER 'ob-root'@'localhost' WITH MAX_CONNECTIONS_PER_HOUR 100 MAX_USER_CONNECTIONS 100; 
 
 ---
 
-Temporarily change the maximum number of connections 
+###### Temporarily change the maximum number of connections 
 
      SET GLOBAL max_connections = 200;
 

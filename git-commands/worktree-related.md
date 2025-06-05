@@ -1,4 +1,4 @@
-### Git worktree related commands
+# Git worktree related commands
 
 ---
 

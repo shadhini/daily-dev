@@ -1,22 +1,22 @@
-### Git branches related commands
+# Git branches related commands
 
-Check status - can view current branch
+###### Check status - can view current branch
 
     git status
 
-View local branches
+###### View local branches
 
     git branch
 
-View all branches
+###### View all branches
 
     git branch -a
 
-View remote branches
+###### View remote branches
 
     git branch -r
 
-Delete a local branch
+###### Delete a local branch
 
     git branch -d <BRANCH_NAME>
 

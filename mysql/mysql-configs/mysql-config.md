@@ -1,6 +1,6 @@
-## MySQL Configurations
+# MySQL Configurations
 
----
+## MySQL Configuration file
 MySQL Configuration file: `my.cnf` or `my.ini`
 * Default options are read from the following mysql configuration files in the given order:
     1. /etc/my.cnf -- preferred location 
@@ -29,7 +29,7 @@ If still there's no existing `my.cnf` file, create one in the `/etc` directory w
 
 ---
 
-### Maximum number of connections allowed by the MySQL server
+## Maximum number of connections allowed by the MySQL server
 Permanently change the maximum number of connections (Persists After MySQL Restarts)
 
 1. Edit the MySQL configuration file

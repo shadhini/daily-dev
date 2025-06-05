@@ -1,4 +1,4 @@
-### Git logging related commands
+# Git logging related commands
 
     git log
 

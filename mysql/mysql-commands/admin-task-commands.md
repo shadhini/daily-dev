@@ -1,6 +1,6 @@
-## MySQL admin tasks related commands
+# MySQL admin tasks related commands
 
-### MySQL user & user privileges management
+## MySQL user & user privileges management
 
     mysql -u <USERNAME> -p <PASSWORD>
 ---

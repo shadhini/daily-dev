@@ -1,4 +1,4 @@
-### Git garbage collection related commands
+# Git garbage collection related commands
 
 ---
     git fsck

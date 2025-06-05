@@ -4,7 +4,7 @@ In following examples
 * `address` is a **dictionary**
 * `hobbies` is a **list**
 
-### YML
+## YML
 
 ```yml
 name: "John Doe"
@@ -23,7 +23,7 @@ hobbies:
 
 * Comments start with # in YML
 
-### JSON
+## JSON
 
 ```json
 {

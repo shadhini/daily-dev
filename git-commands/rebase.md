@@ -1,4 +1,4 @@
-### Git rebase related commands
+# Git rebase related commands
 
 ---
 

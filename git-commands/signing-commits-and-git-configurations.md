@@ -1,4 +1,4 @@
-### Signing Commits and Git Configurations
+# Signing Commits and Git Configurations
 
 ---
 

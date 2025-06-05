@@ -1,15 +1,15 @@
-### CRLF_INJECTION_LOGS
+# CRLF_INJECTION_LOGS
 `Carriage Return Line Feed`
 
-#### Issue
+## Issue
 
 CRLF injection in logs is a security vulnerability that can allow attackers to manipulate log files, potentially injecting malicious content or misleading log entries.
 
-#### Solution
+## Solution
 `sanitize any user input or external data before logging it`
 
 
-##### Identifying Log Injections Points
+### Identifying Log Injections Points
 
 * Check points where user input or external data is being logged; 
   * even if it is detected as user input/external data, 
@@ -20,7 +20,7 @@ CRLF injection in logs is a security vulnerability that can allow attackers to m
 logger.info("User input: " + userInput);
 ```
 
-##### Sanitizing the Input
+### Sanitizing the Input
 
 * Ensure that (CRLF) newline characters (`\r `and `\n`) are properly escaped or removed from the log entries.
 
