@@ -100,6 +100,37 @@ render_with_liquid: false
 4. Update the `topics.yml` file in the `_data` directory if necessary.
 5. Add new page entry to the `technologies-sidebar.yml` and `tech-catalog-sidebar.yml` files in the `_data` directory.
 
+### Sample <TECHNOLOGY_TITLE>.md file Format
+
+```markdown
+# Java
+
+---
+`General-purpose programming language`
+
+#### My Notes
+
+- Java Guide: [Java Guide]()
+
+---
+
+## Ecosystem, Frameworks & Tooling
+
+## Core Concepts
+
+## Key Features & Strengths
+
+## Architectural Considerations
+
+## Common Use Cases
+
+## When is Java a Good Fit
+
+## Limitations & When Not to Use
+
+## Emerging Trends
+```
+
 ## Add a New Topic
 1. Add the new markdown file to the `_topics` directory.
 2. Add the following front matter to the new markdown file:
