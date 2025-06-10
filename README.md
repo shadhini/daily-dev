@@ -1,12 +1,13 @@
----
 # DailyDev 👩🏻‍💻🎯
 
+---
 
 A concise collection of essential commands and coding snippets for daily development.
 
 Perfect for quick reference and boosting productivity!
 
 ---
+
 Welcome to **DailyDev**! 🚀 Your future go-to collection of essential commands, coding snippets, and handy tips for daily development. This repository is currently under development, but stay tuned for a treasure trove of resources to simplify your coding journey! 🛠️
 
 * **Quick Commands**: Easily accessible terminal commands to streamline your workflow. ⌨️
@@ -17,6 +18,35 @@ We are going to bring you a comprehensive and user-friendly reference that will 
 
 ---
 
+## Contents
+
+- [clean coding](https://github.com/shadhini/daily-dev/blob/clean-coding)
+    - [known bug fixes](https://github.com/shadhini/daily-dev/blob/clean-coding/fix-bugs)
+    - good practices
+      - [code quality & security vulnerability checking](https://github.com/shadhini/daily-dev/blob/clean-coding/practices-code-quality-n-security-vulnerability-checking.md)
+- [design patterns](https://github.com/shadhini/daily-dev/blob/design-patterns)
+
+---
+
+- [osgi commands](https://github.com/shadhini/daily-dev/blob/osgi-commands)
+- [git commands](https://github.com/shadhini/daily-dev/blob/git-commands)
+- [mysql](https://github.com/shadhini/daily-dev/blob/mysql)
+
+---
+
+- [macOS](https://github.com/shadhini/daily-dev/blob/macOS)
+
+---
+
+
+## Templates | Starters
+
+- Maven Multi Module Project Starter Template: [CODE](https://github.com/shadhini/daily-dev/blob/maven-multi-module-project-template) | [DOWNLOAD]()
+
+---
+- Jekyll Technology Catalog Template: [CODE]() | [DOWNLOAD]()
+
+---
 
 <!-- ---
 
