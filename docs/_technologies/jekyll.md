@@ -4,6 +4,7 @@ render_with_liquid: false
 ---
 
 # Jekyll
+[Jekyll Documentation](https://jekyllrb.com/docs/)
 
 ---
 `static site generator` written in `Ruby`
@@ -21,11 +22,14 @@ render_with_liquid: false
 - static site generator: `jekyll`
 - dependency & plugin management: `Ruby` & `RubyGems`
   - `Gemfile` and `Bundler`
+- input files:
+ - `.md`, `.html`, `.yml`, `.json`
+ - templates/tags in `liquid` --> `{{ }}`, `{% %}`
+ - css/js/assets
 - templating engine: `liquid`
  - Filters, Tags, Objects -- for dynamic content generation during build time
 - markdown processor: `kramdown`
 - syntax highlighter: `rouge`
-- site deployment: `github pages`
 - metadata in content files: `YAML front matter`
 - js libraries:
   - `bootstrap`
@@ -44,7 +48,7 @@ render_with_liquid: false
   - `jekyll-seo-tag`, `jekyll-feed`, `jekyll-sitemap`, `jekyll-paginate`, ...
   - custom plugins
 - deployment platforms:
-  - `GitHub Pages` (default)
+  - `GitHub Pages` (default - in-built support)
   - `Netlify`, `Vercel`, `AWS S3/CloudFront`, `Firebase Hosting`, traditional web servers
 
 

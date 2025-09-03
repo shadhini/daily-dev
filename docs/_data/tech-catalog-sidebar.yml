@@ -7,12 +7,17 @@
   icon_color: cyan
   pages:
     - title: Jekyll
+    - title: JSON
+    - title: YAML
+    - title: JSON Schema
 
 - title: Topics
   icon: bookmark-star-fill
   icon_color: cyan
   pages:
     - title: Static Site Generators
+    - title: Data Formats
+    - title: Data Validation
 
 - title: Tech Catalog
   icon: journal-bookmark-fill

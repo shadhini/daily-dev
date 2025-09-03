@@ -27,6 +27,9 @@ render_with_liquid: false
 
 ## Emerging Trends
 
+## TODO:
+- [ ] To be refined & verified
+
 
 --- unverified --------------------------------------------------------------
 ## Ecosystem, Frameworks & Tooling

@@ -14,5 +14,5 @@ no need to rerun code, but need to revert the last stack frame where error occur
 
 
 ## Quick Evaluate Expression
-- Select the expression to be evaluated &
-- `option` + `command` + `fn` + `F8`
+- Select the expression to be evaluated & 
+  - `option` + `command` + `fn` + `F8`

@@ -7,6 +7,8 @@
   icon_color: cyan
   pages:
     - title: Static Site Generators
+    - title: Data Formats
+    - title: Data Validation
 
 - title: Tech Catalog
   icon: journal-bookmark-fill

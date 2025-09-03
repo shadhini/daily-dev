@@ -23,4 +23,20 @@ jekyll:
       url: "https://shadhini.github.io/jekyll-tryouts/"
     - name: "Jekyll Template for Technology Catalog"
       url: "https://github.com/shadhini/daily-dev/releases/tag/tech-catalog-jekyll-template-v0.2"
-
+json:
+  topics:
+    - "Data Formats"
+  similar-technologies:
+    - "YAML"
+  related-technologies:
+    - "JSON Schema"
+yaml:
+  topics:
+    - "Data Formats"
+  similar-technologies:
+    - "JSON"
+json-schema:
+  topics:
+    - "Data Validation"
+  related-technologies:
+    - "JSON"

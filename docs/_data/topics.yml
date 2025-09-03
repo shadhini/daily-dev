@@ -15,3 +15,12 @@ static-site-generators:
 #  important:
 #    - name: Test Link
 #      url: https://example.com
+data-formats:
+  technologies:
+    - "JSON"
+    - "YAML"
+  related-topics:
+    - "Data Validation"
+data-validation:
+  technologies:
+    - "JSON Schema"
