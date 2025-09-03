@@ -6,10 +6,10 @@ render_with_liquid: false
 # Jekyll
 [Jekyll Documentation](https://jekyllrb.com/docs/)
 
----
 `static site generator` written in `Ruby`
 
-#### My Notes
+---
+## My Notes
 
 - Jekyll Guide: [Jekyll Guide](https://github.com/shadhini/jekyll-tryouts/blob/main/jekyll-guide.md)
 - Jekyll Quick Reference Guide: [Jekyll Quick Reference](https://github.com/shadhini/jekyll-tryouts/blob/main/jekyll-quick-reference-guide.md)

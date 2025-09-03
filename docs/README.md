@@ -1,11 +1,10 @@
-# Adding a template project to Daily Dev 
+# Running Daily-Dev Website Locally
 
-1. Create the template project in a suitable subdirectory of the root directory.
-2. After adding all necessary files, create a branch for the template project.
-3. Remove any unnecessary files from this branch.
-4. Update the README.md file in the root directory of the template project branch.
-5. Release the template project branch.
-
+run the website
+```bash
+cd docs
+bundle exec jekyll serve --livereload
+```
 
 # Maintaining the Tech Catalog
 
@@ -144,3 +143,11 @@ render_with_liquid: false
 3. Update the `topics.yml` file in the `_data` directory with the new topic details.
 4. Update the `technologies.yml` file in the `_data` directory if necessary.
 5. Add new page entry to the `topics-sidebar.yml` and `tech-catalog-sidebar.yml` files in the `_data` directory.
+
+# Adding a template project to Daily Dev
+
+1. Create the template project in a suitable subdirectory of the root directory.
+2. After adding all necessary files, create a branch for the template project.
+3. Remove any unnecessary files from the branch.
+4. Update the README.md file in the root directory of the template project branch.
+5. Release the template project branch.

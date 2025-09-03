@@ -53,6 +53,7 @@ title: "Tech Catalog"
                 {% endfor %}
             </td>       
         </tr>
+        {% if site.data.technologies[technology.slug].important %}
         <tr>
             <td></td>
             <!-- Important Links -->
@@ -75,6 +76,7 @@ title: "Tech Catalog"
                 </div> 
             </td>
         </tr>
+        {% endif %}
     {% endfor %}
     </tbody>
 </table>
@@ -118,6 +120,7 @@ title: "Tech Catalog"
                 {% endfor %}
             </td>
         </tr>
+        {% if site.data.topics[topic.slug].important %}
         <tr>
             <td></td>
             <!-- Important Links -->
@@ -140,6 +143,7 @@ title: "Tech Catalog"
                 </div> 
             </td>
         </tr>
+        {% endif %}
     {% endfor %}
     </tbody>
 </table>

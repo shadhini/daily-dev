@@ -3,7 +3,7 @@ title: YAML
 render_with_liquid: false
 ---
 
-# YML
+# YAML
 
 `data serialization format`
 

@@ -17,10 +17,14 @@ jekyll:
     - "Kramdown"
     - "Rouge"
   important:
-    - name: "Jekyll Tryouts"
-      url: "https://github.com/shadhini/jekyll-tryouts"
+    - name: "Jekyll Guide"
+      url: "https://github.com/shadhini/jekyll-tryouts/blob/main/jekyll-guide.md"
+    - name: Jekyll Quick Reference Guide
+      url: "https://github.com/shadhini/jekyll-tryouts/blob/main/jekyll-quick-reference-guide.md"
     - name: "Jekyll Tryouts Demo Website"
       url: "https://shadhini.github.io/jekyll-tryouts/"
+    - name: Jekyll Reusable Templates in my Jekyll Tryouts Repo
+      url: "https://github.com/shadhini/jekyll-tryouts/blob/main/jekyll-reusable-templates.md"
     - name: "Jekyll Template for Technology Catalog"
       url: "https://github.com/shadhini/daily-dev/releases/tag/tech-catalog-jekyll-template-v0.2"
 json:
