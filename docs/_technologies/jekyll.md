@@ -161,5 +161,3 @@ render_with_liquid: false
 - **Improved Developer Experience:** better tooling, streamlined development
 - **Integration with Modern Frontend Tooling:** Patterns for use with JS frameworks
 
-## TODO:
-- [ ] To be refined & verified

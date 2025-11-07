@@ -44,3 +44,22 @@ json-schema:
     - "Data Validation"
   related-technologies:
     - "JSON"
+github-copilot:
+  topics:
+    - "Dev Tools"
+    - "MCP"
+  important:
+    - name: "Github Copilot CLI: Configurations"
+      url: "https://github.com/shadhini/daily-dev/blob/main/github-copilot-cli/configurations.md"
+    - name: "Github Copilot CLI: Commands"
+      url: "https://github.com/shadhini/daily-dev/blob/main/github-copilot-cli/commands.md"
+intellij-idea:
+  topics:
+    - "Dev Tools"
+  important:
+    - name: "IntelliJ IDEA: Debugging"
+      url: "https://github.com/shadhini/daily-dev/blob/main/IDE-support/IntelliJIDEA/debugging.md"
+    - name: "Github Copilot CLI: Version Control"
+      url: "https://github.com/shadhini/daily-dev/blob/main/IDE-support/IntelliJIDEA/version-control.md"
+    - name: "IntelliJ IDEA: Shortcuts"
+      url: "https://github.com/shadhini/daily-dev/blob/main/IDE-support/IntelliJIDEA/shortcuts.md"

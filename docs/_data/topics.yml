@@ -24,3 +24,8 @@ data-formats:
 data-validation:
   technologies:
     - "JSON Schema"
+dev-tools:
+  technologies:
+    - "IntelliJ IDEA"
+    - "Github Copilot"
+
