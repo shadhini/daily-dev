@@ -28,4 +28,5 @@ dev-tools:
   technologies:
     - "IntelliJ IDEA"
     - "Github Copilot"
+    - "Maven"
 

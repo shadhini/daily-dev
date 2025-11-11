@@ -17,5 +17,8 @@ render_with_liquid: false
   - [CLI](https://github.com/github/copilot-cli?utm_source=web-hpace-copilot-cli-primary-cta&utm_medium=web&utm_campaign=universe25post)
   - VS Code extension
 
+## Build & Dependency Management Tools 
+- Maven
+- Gradle
   
 

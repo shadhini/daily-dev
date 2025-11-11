@@ -6,10 +6,12 @@
   icon: bookmarks-fill
   icon_color: cyan
   pages:
+    - title: Spring
     - title: Jekyll
     - title: JSON
     - title: YAML
     - title: JSON Schema
+    - title: Maven
     - title: Github Copilot
     - title: IntelliJ IDEA
 

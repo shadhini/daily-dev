@@ -63,3 +63,10 @@ intellij-idea:
       url: "https://github.com/shadhini/daily-dev/blob/main/IDE-support/IntelliJIDEA/version-control.md"
     - name: "IntelliJ IDEA: Shortcuts"
       url: "https://github.com/shadhini/daily-dev/blob/main/IDE-support/IntelliJIDEA/shortcuts.md"
+maven:
+  topics:
+    - "Dev Tools"
+  important:
+    - name: "Maven: Commands"
+      url: "https://github.com/shadhini/daily-dev/blob/main/build-tools/maven/commands.md"
+spring:
