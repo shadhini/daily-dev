@@ -69,4 +69,24 @@ maven:
   important:
     - name: "Maven: Commands"
       url: "https://github.com/shadhini/daily-dev/blob/main/build-tools/maven/commands.md"
+openpgp:
+  topics:
+    - "Cryptography"
+    - "Dev Tools"
+  important:
+    - name: "OpenPGP: Commands"
+      url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/gpg/commands.md"
+    - name: "Best Practices: Key Management"
+      url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/key-management.md"
+openssl:
+  topics:
+    - "Cryptography"
+    - "Dev Tools"
+  important:
+    - name: "OpenSSL: Commands"
+      url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/commands.md"
+    - name: "OpenSSL: Configuration File"
+      url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/configurations/openssl.cnf"
+    - name: "Best Practices: Key Management"
+      url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/key-management.md"
 spring:

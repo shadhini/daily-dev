@@ -9,3 +9,4 @@
 - [ ] add to tech-catalog [mysql](https://github.com/shadhini/daily-dev/blob/main/mysql)
 - [ ] add to tech-catalog [osgi-commands](https://github.com/shadhini/daily-dev/blob/main/osgi-commands)
 
+connect how to's in dev-tools to specific topics in related files 

@@ -14,6 +14,8 @@
     - title: Maven
     - title: Github Copilot
     - title: IntelliJ IDEA
+    - title: OpenPGP
+    - title: OpenSSL
 
 - title: Tech Catalog
   icon: journal-bookmark-fill

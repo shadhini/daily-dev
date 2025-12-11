@@ -29,4 +29,33 @@ dev-tools:
     - "IntelliJ IDEA"
     - "Github Copilot"
     - "Maven"
-
+    - "OpenPGP"
+    - "OpenSSL"
+  related-topics:
+    - "Digital ID"
+    - "Cryptography"
+  important:
+    - name: "Best Practices: Key Management"
+      url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/key-management.md"
+cryptography:
+  technologies:
+    - "OpenPGP"
+    - "OpenSSL"
+  related-topics:
+    - "Digital ID"
+  important:
+    - name: "Best Practices: Key Management"
+      url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/key-management.md"
+day-to-day:
+  related-topics:
+    - "Digital ID"
+  important:
+    - name: "Best Practices: Digital ID"
+      url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/digital-id.md"
+digital-id:
+  related-topics:
+    - "Day-to-Day"
+    - "Cryptography"
+  important:
+    - name: "Best Practices: Digital ID"
+      url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/digital-id.md"

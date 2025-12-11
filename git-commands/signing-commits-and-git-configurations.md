@@ -26,8 +26,14 @@
 
 ---
 
-	git config --global user.signingkey <YOUR_KEY_ID>
-	git config --global commit.gpgSign true
+Use a GPG key and add the public key to GitHub
+- Profile → Settings → SSH and GPG keys -> New GPG key
+
+Configure Git to sign
+
+    git config --global user.signingkey <YOUR_KEY_ID>
+    git config --global commit.gpgsign true
+
 	git config user.signingkey ABC123DEF
 	git config commit.gpgSign true
 
@@ -38,3 +44,6 @@
 	git log --show-signature
 
 ---
+
+Verify commits on GitHub appear as `"Verified"`
+
