@@ -73,6 +73,8 @@ openpgp:
   topics:
     - "Cryptography"
     - "Dev Tools"
+  related-technologies:
+    - "OpenSSL"
   important:
     - name: "OpenPGP: Commands"
       url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/gpg/commands.md"
@@ -82,6 +84,8 @@ openssl:
   topics:
     - "Cryptography"
     - "Dev Tools"
+  related-technologies:
+    - "OpenPGP"
   important:
     - name: "OpenSSL: Commands"
       url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/commands.md"
@@ -89,4 +93,14 @@ openssl:
       url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/configurations/openssl.cnf"
     - name: "Best Practices: Key Management"
       url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/key-management.md"
+steghide:
+  topics:
+    - "Dev Tools"
+    - "Steganography"
+  related-technologies:
+    - "outguess"
+    - "stegsnow"
+  important:
+    - name: "Steghide: Commands"
+      url: "https://github.com/shadhini/daily-dev/blob/main/steganography-tools/steghide/commands.md"
 spring:

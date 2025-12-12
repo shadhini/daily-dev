@@ -10,3 +10,4 @@
 - [ ] add to tech-catalog [osgi-commands](https://github.com/shadhini/daily-dev/blob/main/osgi-commands)
 
 connect how to's in dev-tools to specific topics in related files 
+connect cryptographic tools in dev-tools to specific topic in the cryptography

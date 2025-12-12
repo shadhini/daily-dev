@@ -34,6 +34,7 @@ dev-tools:
   related-topics:
     - "Digital ID"
     - "Cryptography"
+    - "Steganography"
   important:
     - name: "Best Practices: Key Management"
       url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/key-management.md"
@@ -43,9 +44,18 @@ cryptography:
     - "OpenSSL"
   related-topics:
     - "Digital ID"
+    - "Dev Tools"
   important:
     - name: "Best Practices: Key Management"
       url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/key-management.md"
+steganography:
+  technologies:
+    - "Steghide"
+    - "Outguess"
+    - "Stegsnow"
+  related-topics:
+    - "Cryptography"
+    - "Dev Tools"
 day-to-day:
   related-topics:
     - "Digital ID"

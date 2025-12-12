@@ -16,6 +16,7 @@
     - title: IntelliJ IDEA
     - title: OpenPGP
     - title: OpenSSL
+    - title: Steghide
 
 - title: Topics
   icon: bookmark-star-fill
@@ -29,6 +30,7 @@
     - title: Cryptography
     - title: Day-to-Day
     - title: Digital ID
+    - title: Steganography
 
 - title: Tech Catalog
   icon: journal-bookmark-fill
