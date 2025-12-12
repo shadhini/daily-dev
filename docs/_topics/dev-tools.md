@@ -23,22 +23,22 @@ render_with_liquid: false
   
 ## Cryptographic Tools for securing/signing files/documents/commits
 
-[cryptography](https://shadhini.github.io/daily-dev/topics/cryptography/)
+[cryptography](https://shadhini.github.io/daily-dev/topics/cryptography/#id-cryptographic-tools-for-securingsigning-filesdocumentscommits)
 
 ## Steganography Tools
 
-[steganography](https://shadhini.github.io/daily-dev/topics/steganography/)
+[steganography](https://shadhini.github.io/daily-dev/topics/steganography/#id-steganography-tools)
 
 
 ### How To
 
 #### Create and maintain an OpenPGP key (free) — for signing emails/files/git
 
-[security-tools/gpg/commands](https://github.com/shadhini/daily-dev/blob/main/security-tools/gpg/commands.md)
+[cryptographic-tools/gpg/commands](https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/gpg/commands.md#create-and-maintain-an-openpgp-key-free--for-signing-emailsfilesgit)
 
 #### Create a self-signed X.509 cert and export to PFX - for testing PDF signing or internal use
 
-[security-tools/openssl/commands](https://github.com/shadhini/daily-dev/blob/main/security-tools/openssl/commands.md)
+[cryptographic-tools/openssl/commands](https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/commands.md)
 
 #### Get trusted TLS certs for websites (`Let’s Encrypt`, free)
 

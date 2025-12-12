@@ -9,5 +9,7 @@ render_with_liquid: false
 
 ## Steganography Tools
 
-`steghide` | `outguess` | `stegsnow`
+- `steghide`   
+- `outguess` 
+- `stegsnow`
 
