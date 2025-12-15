@@ -80,8 +80,13 @@
     - `-sha256`: use SHA-256 as hashing algorithm
     - `-passin pass:<PRIVATE_KEY_PASSWORD>`: to decrypt the encrypted private key input file
     - `-text -noout`: print a certificate file
-      - `-text`: displays the certificate in a human-readable format
-      - `-noout`: suppresses output of the raw certificate
+    - `-text`: displays the certificate in a human-readable format
+    - `-noout`: suppresses output of the raw certificate; don't print encoded
+      - `-issuer`: issuer information
+      - `-subject`: subject information
+      - `-dates`: validity period
+      - `-serial`: certificate serial number
+      - `-text | grep -A10 "X509v3 extensions"`: extensions (if present)
     - `-outform PEM|DER` : output format
 - `verify [options] <CERTIFICATE_TO_BE_VERIFIED>`: checks an X.509 certificate’s chain of trust and validity against trusted CA certificates
     - verifies signatures, expiry, and optionally CRLs

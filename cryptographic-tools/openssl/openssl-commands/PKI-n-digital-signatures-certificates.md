@@ -263,6 +263,8 @@ Getting Private key
 
 ## Verify the CA issued/signed certificates
 
+### Verify certificate
+
 ```shell
 openssl x509 -in user1_cert.pem -text -noout
 openssl x509 -in client.crt -text -noout
@@ -306,6 +308,8 @@ Certificate:
     Signature Algorithm: sha256WithRSAEncryption  .....
 ```
 
+### Verify certificate chain
+
 ```shell
 openssl verify -CAfile ca/certs/ca-cert.pem user1_cert.pem 
 openssl verify -CAfile ca/certs/ca-cert.pem client.crt
@@ -321,6 +325,8 @@ client.crt: OK
 
 
 ## Verify self-signed certificates
+
+### Verify certificate
 
 ```shell
 openssl x509 -in user1_cert_self_signed.pem -text -noout
@@ -347,7 +353,8 @@ Certificate:
                 Exponent: 65537 (0x10001)
     Signature Algorithm: sha256WithRSAEncryption .....
 ```
-----
+
+### Verify certificate chain
 
 ```shell
 openssl verify -CAfile user1_cert_self_signed.pem user1_cert_self_signed.pem
@@ -469,3 +476,34 @@ Simulate a Client-Server Authentication
 - From another terminal, connect to the server as a client
 
       openssl s_client -connect localhost:8443 -CAfile ca.crt
+
+## Extract and Inspect the Certificate Fields
+
+View complete certificate details
+
+    openssl x509 -in client.crt -text -noout
+
+View Issuer information
+
+    openssl x509 -in client.crt -noout -issuer
+
+View Subject information
+
+    openssl x509 -in client.crt -noout -subject
+
+View Validity period
+
+    openssl x509 -in client.crt -noout -dates
+
+View Certificate serial number
+
+    openssl x509 -in client.crt -noout -serial
+
+View Extensions (if present)
+
+    openssl x509 -in client.crt -noout -text | grep -A10 "X509v3 extensions"
+
+Save the extracted information to files
+
+    openssl x509 -in client.crt -noout -issuer > issuer_info.txt
+    cat issuer_info.txt
