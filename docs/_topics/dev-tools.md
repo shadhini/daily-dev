@@ -38,7 +38,7 @@ render_with_liquid: false
 
 #### Create a self-signed X.509 cert and export to PFX - for testing PDF signing or internal use
 
-[cryptographic-tools/openssl/commands](https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/commands.md)
+[cryptographic-tools/openssl/commands](https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/openssl-commands/commands.md#create-a-self-signed-x509-cert-and-export-to-pfx---for-testing-pdf-signing-or-internal-use)
 
 #### Get trusted TLS certs for websites (`Let’s Encrypt`, free)
 

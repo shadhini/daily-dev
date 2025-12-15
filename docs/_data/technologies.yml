@@ -88,7 +88,7 @@ openssl:
     - "OpenPGP"
   important:
     - name: "OpenSSL: Commands"
-      url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/commands.md"
+      url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/openssl-commands/"
     - name: "OpenSSL: Configuration File"
       url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/configurations/openssl.cnf"
     - name: "Best Practices: Key Management"

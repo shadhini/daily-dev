@@ -9,5 +9,3 @@
 - [ ] add to tech-catalog [mysql](https://github.com/shadhini/daily-dev/blob/main/mysql)
 - [ ] add to tech-catalog [osgi-commands](https://github.com/shadhini/daily-dev/blob/main/osgi-commands)
 
-connect how to's openssl related how to  in dev-tools to the specific topics in openssl command file 
-- line 41

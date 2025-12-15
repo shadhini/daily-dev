@@ -1,0 +1,137 @@
+# OpenSSL Command Format & Keywords
+
+    openssl <utility> [options] [operands]
+
+
+- `genpkey`: generate a private key
+    - `-algorithm`: key generation algorithm
+        - operands: `RSA`
+    - `-out <NEW_PRIVATE_KEY_FILE_PATH>.pem`: name of the output file where generated private key is saved
+    - `-pkeyopt`: private key options
+        - operands:
+            - `rsa_keygen_bits:2048`: sets the RSA key size to 2048 bits
+    - `-aes256`: encrypts the private key with `AES-256` encryption
+    - `-paramfile <PARAM_FILE_PATH>.pem`: specifies the parameter file; can be used to pass Diffie-Hellman parameters
+    - `-pass pass:<YOUR_PASSWORD>`: used when encrypting the private key output file; specifies the password for encrypting the private key
+- `genrsa`: Generates an RSA private key (PEM format) with a specified key size
+  - `-aes256`: key file encryption algorithm
+  - `-out <PRIVATE_KEY_PATH[key][pem]> <KEY_SIZE>`
+  - <KEY_SIZE>: 2048
+- `rsa`: RSA utility
+    - `-pubout`: extracts the public key from the given private key
+    - `-in <PRIVATE_KEY_FILE_PATH>.pem`: input file containing the private key
+    - `-out <NEW_PUBLIC_KEY_FILE_PATH>.pem`: output file where the extracted public key will be saved
+- `pkeyutl`: public key operations (encryption, decryption, signing, verification)
+    - `-encrypt`| `-decrypt` | `-derive`: encrypt/decrypt the input file | derive shared secret using private and peer public keys
+    - `-in <INPUT_FILE_PATH>`: path to input file to be encrypted/decrypted
+    - `-pubin`: indicates that the input key is a public key; if not present input key is taken as the private key
+    - `-inkey <KEY_FILE_PATH>.pem`: key file  to be used for encryption/decryption/deriving shared secret
+    - `-peerkey`: specifies the peer's public key file
+    - `-out <OUTPUT_FILE_PATH>.bin`: output file where the encrypted/decrypted data/shared secret will be saved
+- `pkey`: manages private and public keys
+    - `-in <INPUT_FILE_PATH>.pem`: specifies the input file; private key file
+  - `-pubout`: extracts the public key
+  - `-out <OUTPUT_FILE_PATH>.pem`: saves the output to a file; public key to a file
+- `rand`: generate random data
+    - `-base64 <NUMBER_OF_BYTES>`| `-hex <NUMBER_OF_BYTES>`
+        - `-base64`: encodes the output in Base64 format
+        - `-hex`: encode the output in hexadecimal format
+        - operand: `<NUMBER_OF_BYTES>`:  the key length (`32` -> 32 bytes = 256 bits)
+    - `> <FILE_PATH>`: saves the output key to a file
+- `enc`: performs encryption/decryption
+    - `-aes-128-cbc` | `-aes-192-cbc` | `-aes-256-cbc`: specifies the encryption algorithm
+        - `-aes-128-cbc`: AES with a 128-bit key in CBC mode
+        - `-aes-192-cbc`: AES with a 192-bit key in CBC mode
+        - `-aes-256-cbc`: AES with a 256-bit key in CBC mode
+    - `-d`: specifies decryption | if this is not defined, then it specifies encryption
+    - `-salt`: adds a salt to enhance security
+    - `-in <PLAINTEXT_PATH>`: specifies the input file
+    - `-out <ENCRYPTED_OUTPUT_FILE_PATH>.bin`: specifies the output file
+    - `-iv <INITIALIZATION_VECTOR>`: can be any random key
+        - `$(tr -d ' \n\r' < iv.txt)`: can be used to import the key value from an existing file
+    - `-pass file:aes_key.txt`: supplies the encryption key from `aes_key.txt`
+- `dhparam`: generates Diffie-Hellman parameters
+    - `-out <DH_PARM_FILE_PATH>.pem`: specifies the output file for the parameters
+    - `2048` | `1024` | `4096` | ... : indicates the size of the DH parameters in bits
+- `req`: creates/displays PKCS#10 certificate signing requests (CSRs)
+    - `-new`: create a new CSR
+    - `-x509`: output a self-signed certificate instead of a CSR
+    - `-key <KEY_FILE.key>`: use existing private key
+    - `-newkey rsa:2048`: generate a new private key as part of the command
+    - `-sha256`: use SHA-256 as hashing algorithm
+    - `-days 365`: sets the certificate’s validity period to `365` days
+    - `-out <OUTPUT_FILE_PATH[csr][crt]>`: write CSR or cert to this file
+    - `-keyout <PRIVATE_KEY_FILE[pem]>`: file path where the newly generated private key will be saved
+    - `-passin pass:<YOUR_PASSWORD>`: to decrypt the encrypted private key input file
+    - `-verify`: inspect and verify a CSR
+    - `nodes`: short for “no DES”; do not encrypt the private key on disk;
+        - the generated private key file will be written in plaintext (no passphrase)
+        - WARNING: this is insecure for production — anyone with file access can use the key
+    -  `-subj "/CN=MyTestCA"`: provide the certificate subject
+       - format: `C=US/ST=State/L=City/O=Org/OU=Unit/CN=common.name`
+- `x509`: manipulate/inspect X.509 certificates
+    - `-req`: treat input as CSR and output a certificate
+        - used with `-signkey` or `-CA/-CAkey`
+    - `-in <INPUT_FILE[csr][pem][der]>`: specifies the input file; a certificate
+    - CA signed cert -> `-CA <CA_CERTIFICATE[crt]> -CAkey <CA_PRIVATE_KEY[key]> -CAcreateserial`: sign a CSR with a CA cert/key and create a serial number file (`.srl`) for the certificate
+    - Self-signed cert -> `-signkey <PRIVATE_KEY_FILE[pem]>`: uses the private key to sign the certificate
+    - `-out <OUTPUT_FILE[crt]>`: write the output file
+    - `-days <n>`: certificate validity in days when creating a cert
+    - `-sha256`: use SHA-256 as hashing algorithm
+    - `-passin pass:<PRIVATE_KEY_PASSWORD>`: to decrypt the encrypted private key input file
+    - `-text -noout`: print a certificate file
+      - `-text`: displays the certificate in a human-readable format
+      - `-noout`: suppresses output of the raw certificate
+    - `-outform PEM|DER` : output format
+- `verify [options] <CERTIFICATE_TO_BE_VERIFIED>`: checks an X.509 certificate’s chain of trust and validity against trusted CA certificates
+    - verifies signatures, expiry, and optionally CRLs
+    - does not check hostnames
+    - options
+      - `-crl_check`: require that each cert in the chain is not revoked (checks CRL for issuer)
+    - `-CAfile <CA_CERTIFIACTE[crt][pem]>`: use a file of trusted certificates (PEM bundle)
+    - `-CRLfile <CRL_FILE[pem]>`: CRL (PEM) file to use with -crl_check
+- `s_server`: built-in OpenSSL test/TLS server; listen on a TCP port and speak TLS
+    - Can present a certificate/key, require client certificates, and print handshake/debug info
+    - Can act as a simple HTTPS-like responder for GETs (-www)
+    - `-cert <SERVER_CERTIFICATE_FILE[crt][pem]>`: server certificate (PEM)
+    - `-key <SERVER_PRIVATE_KEY[key][pem]>`: server private key (PEM)
+    - `-accept <PORT|HOST:PORT>`: port (or host:port) to listen on (e.g: 4433)
+- `s_client`: OpenSSL’s built‑in TLS client; a flexible diagnostic tool to connect to TLS servers
+    - opens a TLS connection to a host:port and prints handshake details and certificates
+    - can request OCSP stapling, perform STARTTLS, present client certs, and exercise specific TLS versions/ciphers
+    - not a full HTTP client: after the handshake you can type or pipe protocol data (HTTP/SMTP/etc)
+    - `-connect <HOST>:<PORT>` : target to connect to (required)
+    - `-CAfile <CA_CERTIFICATE[crt][pem]>` : trust anchors (PEM bundle) used to verify server certs
+- `ca`: simple CA management command
+    - signs certificate signing requests (CSRs) to produce end‑entity or subordinate CA certificates using an on‑disk CA database
+    - maintains a certificate index (index.txt) and serial number file to track issued certificates
+    - can revoke certificates and generate CRLs
+    - uses the OpenSSL config (`ssl/openssl.cnf`) file to control policies, extensions, file locations, and defaults
+    - `-config <CONFIG_FILE_PATH>` : specify the openssl config file to use, in case need to bypass the default config file
+    - `-in <CSR_FILE[pem][csr]>` : CSR to sign
+    - `-out <CERT_FILE[pem][crt]>` : destination certificate file
+    - `-cert <CA_CERTIFICATE_FILE[pem]>`: CA certificate file to load and use as the signer identity instead of using the certificate file path taken from the config's CA_default
+    - `-keyfile <CA_PRIVATE_KEY_FILE[pem]>`: private key file to use for signing operations
+    - `-days <n>` : validity in days
+    - `-batch`: non-interactive (don't ask to confirm)
+    - `-revoke <CLIENT_CERTIFICATE[crt]>`: revoke a certificate (supply the cert file or serial with -config)
+    - `-gencrl -out <CRL[pem]>`: generate CRL
+- `pkcs12`: create, parse, and convert PKCS#12 (PFX) files; PKCS#12 bundles keys + certificates into one binary file
+    - commonly used by Windows, Java keystores, and some servers/clients
+    - `-export`: create (export) a PKCS#12 file; without this flag, pkcs12 reads/inspects an existing `.pfx`
+    - `-out <OUTPUT_FILE[pfx][p12]>`: path and filename to write the resulting PKCS#12 file
+    - `-inkey <PRIVATE_KEY_FILE[pem]>`: private key file to include in the PKCS#12;
+        - this must correspond to the certificate given with `-in` (otherwise the bundle will be invalid for use)
+    - `-in <CERTIFICATE[pem]>`: end‑entity (leaf) certificate to include in the PKCS#12
+        - if the certificate and key match, that pair becomes the “personal” certificate entry in the PFX
+    - `-certfile <CA_CHAIN[pem]>`: additional certificates to include in the PKCS#12 (usually intermediate CA certificates and optionally the root)
+- `dgst <OPTIONS> <FILE>`: compute message digests (checksums), HMACs, and create/verify digital signatures
+    - if no file is given, dgst reads stdin
+    - `-md5` | `-sha1` | `-sha224` | `-sha256` | `-sha384` | `-sha512` | ...: select digest algorithm
+    - `-hmac <SECRET_KEY>`:compute HMAC using the specified secret key
+- `crl`: inspect, convert and manage X.509 Certificate Revocation Lists (CRLs)
+  - `-in <CRL_FILE>` : input CRL file (PEM default)
+  - `-text`: print human-readable CRL contents (revoked entries, dates, extensions)
+  - `-noout`: don't print encoded CRL
+
+    

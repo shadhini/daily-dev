@@ -57,4 +57,12 @@ Examples:
 - chmod go-w file — remove write for group and others
 - chmod a=r file — set everyone to read only
 
-##### 
+## File writing/modifying
+
+create a file and write the output to it 
+
+    echo "This is a test file for hashing." > testfile.txt
+
+append a new line to an existing file
+
+    echo "Another line of text." >> testfile.txt

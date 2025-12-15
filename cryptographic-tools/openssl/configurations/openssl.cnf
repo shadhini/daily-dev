@@ -2,23 +2,25 @@
 default_ca = CA_default
 
 [ CA_default ]
-dir               = ./demoCA
+dir               = ./ca
 certs             = $dir/certs
-crl_dir           = $dir/crl
 database          = $dir/index.txt
 new_certs_dir     = $dir/newcerts
 serial            = $dir/serial
-private_key       = $dir/private/ca.key.pem
-certificate       = $dir/certs/ca.cert.pem
+private_key       = $dir/private/ca-key.pem
+certificate       = $dir/certs/ca-cert.pem
 crlnumber         = $dir/crlnumber
-crl               = $dir/crl/ca.crl.pem
+crl               = $dir/crl/ca-crl.pem
+crl_dir           = $dir/crl
 default_md        = sha256
 name_opt          = ca_default
 cert_opt          = ca_default
 default_days      = 375
 preserve          = no
-policy            = policy_strict
+policy            = policy_anything
 unique_subject    = yes
+default_crl_days  = 30
+crl_extensions    = crl_ext
 
 [ policy_strict ]
 # require some fields; set "optional" or "match" as needed
