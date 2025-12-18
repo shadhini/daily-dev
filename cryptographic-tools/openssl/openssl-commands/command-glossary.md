@@ -132,8 +132,13 @@
     - `-certfile <CA_CHAIN[pem]>`: additional certificates to include in the PKCS#12 (usually intermediate CA certificates and optionally the root)
 - `dgst <OPTIONS> <FILE>`: compute message digests (checksums), HMACs, and create/verify digital signatures
     - if no file is given, dgst reads stdin
-    - `-md5` | `-sha1` | `-sha224` | `-sha256` | `-sha384` | `-sha512` | ...: select digest algorithm
-    - `-hmac <SECRET_KEY>`:compute HMAC using the specified secret key
+    - `<OPTIONS>`
+      - `-md5` | `-sha1` | `-sha224` | `-sha256` | `-sha384` | `-sha512` | ...: select digest algorithm
+      - `-hmac <SECRET_KEY>`:compute HMAC using the specified secret key
+      - `-sign <PRIVATE_KEY[pem]>`: sign the digest with private key (PEM/DER) and write signature to stdout or use -out
+      - `-out <OUTPUT_FILE[bin]>`: write digest or signature output to file
+      - `-verify <PUBLIC_KEY.[pem]>`: verify a signature with a public key
+      - `-signature <SIGNATURE_FILE[bin]>`: when verifying, the file containing the signature
 - `crl`: inspect, convert and manage X.509 Certificate Revocation Lists (CRLs)
   - `-in <CRL_FILE>` : input CRL file (PEM default)
   - `-text`: print human-readable CRL contents (revoked entries, dates, extensions)

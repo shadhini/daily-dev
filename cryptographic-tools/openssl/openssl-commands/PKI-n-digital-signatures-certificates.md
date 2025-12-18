@@ -1,4 +1,4 @@
-# PKI: Public Key Infrastructure
+# PKI: Public Key Infrastructure, Digital Signatures & Certificates
 
 ## Set up a CA: Certificate Authority 
 
@@ -507,3 +507,18 @@ Save the extracted information to files
 
     openssl x509 -in client.crt -noout -issuer > issuer_info.txt
     cat issuer_info.txt
+
+
+## Sign a Document
+
+Generate a digital signature for the document
+
+```shell
+openssl dgst -sha256 -sign private_key.pem -out document_signature.bin contract.txt  
+```
+
+Verify the digital signature
+
+```shell
+openssl dgst -sha256  -verify public_key.pem -signature document_signature.bin contract.txt  
+```

@@ -73,6 +73,7 @@ openpgp:
   topics:
     - "Cryptography"
     - "Dev Tools"
+    - "Digital Security"
   related-technologies:
     - "OpenSSL"
   important:
@@ -84,6 +85,7 @@ openssl:
   topics:
     - "Cryptography"
     - "Dev Tools"
+    - "Digital Security"
   related-technologies:
     - "OpenPGP"
   important:
@@ -97,6 +99,7 @@ steghide:
   topics:
     - "Dev Tools"
     - "Steganography"
+    - "Digital Security"
   related-technologies:
     - "outguess"
     - "stegsnow"

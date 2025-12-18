@@ -66,3 +66,15 @@ create a file and write the output to it
 append a new line to an existing file
 
     echo "Another line of text." >> testfile.txt
+
+## Comparing Files
+
+to confirm that 2 files are identical
+
+    sha256sum <FILE_1> <FILE_2>
+
+compare differences
+
+    diff <FILE_1> <FILE_2>
+    cmp <FILE_1> <FILE_2>
+

@@ -43,5 +43,6 @@ to confirm that 2 files are identical
 compare differences
 
     diff <FILE_1> <FILE_2>
+    cmp <FILE_1> <FILE_2>
 
 
