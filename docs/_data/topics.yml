@@ -31,10 +31,12 @@ dev-tools:
     - "Maven"
     - "OpenPGP"
     - "OpenSSL"
+    - "RemixIDE"
   related-topics:
     - "Digital ID"
     - "Cryptography"
     - "Steganography"
+    - "Software Licenses"
   important:
     - name: "Best Practices: Key Management"
       url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/key-management.md"
@@ -86,3 +88,9 @@ digital-security:
   important:
     - name: "Security Attacks"
       url: "https://github.com/shadhini/daily-dev/blob/main/security-attacks/"
+software-licenses:
+  related-topics:
+    - "Dev Tools"
+  important:
+    - name: "List of Software Licenses"
+      url: "https://github.com/shadhini/daily-dev/blob/main/licenses"

@@ -106,4 +106,16 @@ steghide:
   important:
     - name: "Steghide: Commands"
       url: "https://github.com/shadhini/daily-dev/blob/main/steganography-tools/steghide/commands.md"
+remixIDE:
+  topics:
+    - "Dev Tools"
+    - "Blockchain Development"
+  important:
+    - name: "REMIX IDE: Plugins"
+      url: "https://github.com/shadhini/daily-dev/blob/main/IDE-support/REMIX-IDE/plugins.md"
+solidity:
+  topics:
+    - "Dev Tools"
+    - "Programming Language"
+    - "Blockchain Development"
 spring:

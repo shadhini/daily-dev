@@ -12,6 +12,10 @@ render_with_liquid: false
     - Visual Studio Code Insiders: the daily preview build that gets new features first but may be less stable
 - IntelliJ IDEA
 
+### Blockchain Development
+- REMIX IDE
+- Solidity: programming language for smart contract development for Ethereum
+
 ## AI Tools
 - GitHub Copilot 
   - [CLI](https://github.com/github/copilot-cli?utm_source=web-hpace-copilot-cli-primary-cta&utm_medium=web&utm_campaign=universe25post)
@@ -29,8 +33,12 @@ render_with_liquid: false
 
 [steganography](https://shadhini.github.io/daily-dev/topics/steganography/#id-steganography-tools)
 
+## Software Licensing
 
-### How To
+[software-licenses](https://shadhini.github.io/daily-dev/topics/software-licenses)
+
+
+## How To's
 
 #### Create and maintain an OpenPGP key (free) — for signing emails/files/git
 

@@ -17,6 +17,8 @@
     - title: OpenPGP
     - title: OpenSSL
     - title: Steghide
+    - title: RemixIDE
+    - title: Solidity
 
 - title: Topics
   icon: bookmark-star-fill
@@ -32,6 +34,7 @@
     - title: Digital ID
     - title: Steganography
     - title: Digital Security
+    - title: Software Licenses
 
 - title: Tech Catalog
   icon: journal-bookmark-fill

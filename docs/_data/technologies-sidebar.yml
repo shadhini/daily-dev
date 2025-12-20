@@ -17,6 +17,8 @@
     - title: OpenPGP
     - title: OpenSSL
     - title: Steghide
+    - title: RemixIDE
+    - title: Solidity
 
 - title: Tech Catalog
   icon: journal-bookmark-fill

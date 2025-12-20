@@ -1,14 +1,43 @@
 # OpenSSL Commands
 
-Install
+## Install
 
-- Linux:
+### Linux:
 
         sudo apt update
         sudo apt install openssl
 
  
     openssl version
+
+### Install OpenSSL on a Ubuntu container
+
+```bash
+docker run -it --name cryptography-tryouts ubuntu bash
+
+# switch to the root user:
+root@cae61c74118e:/# su -       
+
+# check OS release version    
+root@cae61c74118e:~# cat /etc/*release*
+DISTRIB_DESCRIPTION="Ubuntu 24.04.1 LTS"
+VERSION="24.04.1 LTS (Noble Numbat)"
+    .....
+
+# install sudo
+root@cae61c74118e:~# apt-get install sudo
+    .....
+    
+# install openssl
+root@cae61c74118e:~# sudo apt-get install openssl
+    .....
+    
+# confirm openssl installation & check the version
+root@cae61c74118e:~# openssl version
+OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)
+root@cae61c74118e:~# 
+```
+
 
 ## Create a self-signed X.509 cert and export to PFX - for testing PDF signing or internal use
 
