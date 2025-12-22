@@ -37,6 +37,7 @@ dev-tools:
     - "Cryptography"
     - "Steganography"
     - "Software Licenses"
+    - "AI"
   important:
     - name: "Best Practices: Key Management"
       url: "https://github.com/shadhini/daily-dev/blob/main/best-practices/key-management.md"
@@ -94,3 +95,10 @@ software-licenses:
   important:
     - name: "List of Software Licenses"
       url: "https://github.com/shadhini/daily-dev/blob/main/licenses"
+ai:
+  related-topoics:
+    - "MCP"
+    - "Dev Tools"
+mcp:
+  related-topoics:
+    - "AI"

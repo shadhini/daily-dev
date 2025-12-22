@@ -20,6 +20,11 @@ render_with_liquid: false
 - GitHub Copilot 
   - [CLI](https://github.com/github/copilot-cli?utm_source=web-hpace-copilot-cli-primary-cta&utm_medium=web&utm_campaign=universe25post)
   - VS Code extension
+- Claude Code
+
+AI models
+- Claude family: `Claude Opus`, `Claude Sonnet`, `Claude Haiku`
+- GPT family
 
 ## Build & Dependency Management Tools 
 - Maven
