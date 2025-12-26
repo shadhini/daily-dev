@@ -24,8 +24,12 @@ render_with_liquid: false
             <td> orchestrate GenAI + tooling + memory + planner to accomplish complex, multi-step tasks </td>
         </tr>
         <tr>
-            <td> MCP </td>
+            <td> MCP: Model Control Plane </td>
             <td> governs, routes, secures, and observes GenAI + tools + agent orchestration at org scale </td>
+        </tr>
+        <tr>
+            <td> MCP: Model Context Protocol </td>
+            <td> a structured envelope for what you send to / receive from a model -- it's about input/output data shape, provenance and runtime constraints </td>
         </tr>
     </tbody>
 </table>
@@ -55,6 +59,11 @@ render_with_liquid: false
 - Use cases: multi-step tasls (research, booking, complex automation)
 **MCP**: Model Control Plane
 - Control-plane infrastructure that manages models, routing, policy, observability, audit logs, access control, cost/budgeting, versioning, and possibly deployment of tool adapters
+- analogue: like the operations center that keeps your AI models running in production (deployment, scaling, monitoring)
+**MCP**: Model Context Protocol
+- it's about input/output data shape, provenance and runtime constraints
+- analogue: like a universal adapter that lets AI models plug into any data source or tool they need to answer questions better
+
 
 ## AI Models
 
