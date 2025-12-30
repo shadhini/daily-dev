@@ -1,5 +1,9 @@
 # DailyDev 👩🏻‍💻🎯
 
+<p align="center">
+  <img src="docs/assets/images/daily-dev-landing.png" alt="DailyDev - Essential commands, coding snippets & tips for daily development" width="800">
+</p>
+
 ---
 
 A concise collection of essential commands and coding snippets for daily development.
