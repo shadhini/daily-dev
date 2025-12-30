@@ -3,6 +3,10 @@ layout: default
 show_sidebar: false
 ---
 
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="{{ '/assets/images/daily-dev-landing.svg' | relative_url }}" alt="DailyDev - Essential commands, coding snippets & tips for daily development" style="max-width: 100%; height: auto; border-radius: 10px;">
+</div>
+
 # DailyDev 👩🏻‍💻🎯
 
 Welcome to **DailyDev**! 🚀 Your future go-to collection of essential commands, coding snippets, handy tips and tech catalog for daily development. 

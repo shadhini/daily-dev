@@ -12,6 +12,27 @@
 </title>
 <link rel="icon" type="image/svg" href="{{ '/assets/images/daily-dev-icon.svg' | relative_url }}">
 
+<!-- SEO and Social Media Meta Tags -->
+<meta name="description" content="DailyDev - A concise collection of essential commands, coding snippets, and tips for daily development. Perfect for quick reference and boosting productivity!">
+<meta name="keywords" content="development, coding, commands, snippets, tech catalog, productivity, developer tools">
+<meta name="author" content="DailyDev">
+
+<!-- Open Graph Meta Tags for Social Media -->
+<meta property="og:title" content="{% if page.url == '/' %}{{ site.title }} - Essential commands, coding snippets & tips{% else %}{{ site.title }} | {{ page.title }}{% endif %}">
+<meta property="og:description" content="A concise collection of essential commands, coding snippets, and tips for daily development. Perfect for quick reference and boosting productivity!">
+<meta property="og:image" content="{{ '/assets/images/daily-dev-landing.png' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{% if page.url == '/' %}{{ site.title }} - Essential commands, coding snippets & tips{% else %}{{ site.title }} | {{ page.title }}{% endif %}">
+<meta name="twitter:description" content="A concise collection of essential commands, coding snippets, and tips for daily development. Perfect for quick reference and boosting productivity!">
+<meta name="twitter:image" content="{{ '/assets/images/daily-dev-landing.png' | absolute_url }}">
+
 
 <!-- Scripts / JS Files -------------------------------------------------------------------------------------------- -->
 
