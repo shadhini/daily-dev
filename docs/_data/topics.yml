@@ -96,9 +96,18 @@ software-licenses:
     - name: "List of Software Licenses"
       url: "https://github.com/shadhini/daily-dev/blob/main/licenses"
 ai:
-  related-topoics:
+  related-topics:
     - "MCP"
     - "Dev Tools"
+    - "Prompt Engineering"
+prompt-engineering:
+  related-topics:
+    - "AI"
+    - "MCP"
+    - "Dev Tools"
+  important:
+    - name: "Prompting: Generic Guidelines"
+      url: "https://github.com/shadhini/daily-dev/blob/main/prompts/generic-guidelines.md"
 mcp:
-  related-topoics:
+  related-topics:
     - "AI"

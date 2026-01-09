@@ -63,9 +63,10 @@ render_with_liquid: false
 **MCP**: Model Context Protocol
 - it's about input/output data shape, provenance and runtime constraints
 - analogue: like a universal adapter that lets AI models plug into any data source or tool they need to answer questions better
+- companies who want AI agents too work with their products use this method
 
 
-## AI Models
+## AI Models & Tools
 
 `Claude`
 - `Claude Code`
@@ -82,3 +83,20 @@ render_with_liquid: false
   - fastest and cheapest
   - for high-volume low-complexity tasks and real-time use
   - lower depth
+
+## `Claude Code` Magic Tricks 
+for better development of software solutions upon user requests
+
+`compacts`
+- when it runs out of context window, it “compacts” prior conversation history and takes notes about exactly where it was when it stopped
+- then it clears its context window and fresh version of the conversation starts with reviewing the notes taken
+`skills`
+- picks up skills as needed from a prior configured curated list of skills in natural language
+  - skills -> instructions -- prompts, sets of tools needed for specific tasks
+- [free list of skills](https://github.com/obra/superpowers)
+- Claude Code slash command `/skills` lets you create or download skills
+`subagents`
+- spawn specialized subagents for specific tasks (e.g., code analysis, testing, documentation)
+- allows to run many different processes at once in parallel
+- Claude Code slash command `/agents` lets you set up subagents
+

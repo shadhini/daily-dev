@@ -21,6 +21,8 @@ render_with_liquid: false
   - [CLI](https://github.com/github/copilot-cli?utm_source=web-hpace-copilot-cli-primary-cta&utm_medium=web&utm_campaign=universe25post)
   - VS Code extension
 - Claude Code
+  - Claude Code CLI: extensive slash commands support
+  - Claude Code Desktop App: limited slash commands support
 
 AI models
 - Claude family: `Claude Opus`, `Claude Sonnet`, `Claude Haiku`
