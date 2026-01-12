@@ -90,12 +90,22 @@ Rotate/expire
 
 List keys:
 
-    gpg --list-keys gpg --list-secret-keys
+    gpg --list-keys 
+    gpg --list-secret-keys
 
 Edit key (add subkey, set expiry, revoke subkey)
 
     gpg --edit-key KEYID
 
+## When you do NOT need to revoke
+- Key never left your machine except being uploaded to your GitHub account (and you trust it wasn’t leaked)
+- You just want to stop using it going forward and will switch to a new key
+- You want to preserve past commit verification as-is (revoking will make past signatures show revoked/invalid)
+
+## When you SHOULD revoke
+- The private key was lost, exposed, or you suspect compromise
+- You published the key widely and want a public record that it’s no longer valid and should not be trusted
+- You want to make sure all verifiers (including people who fetched the key earlier) see it as invalid
 
 ## Delete GPG keys
 
@@ -125,8 +135,12 @@ If the key was ever published or used externally — revoke it first (recommende
 - publish the revocation to keyservers (so others see it revoked)
 
       gpg --keyserver hkps://keyserver.ubuntu.com --send-keys <FINGERPRINT> 
+      gpg --keyserver hkps://keys.openpgp.org --send-keys <FINGERPRINT>
   - Note: many keyservers are read-only or retention varies; 
     - publishing to multiple servers or uploading your public key with the revocation is wise
+  - Common servers:
+    - keys.openpgp.org (recommended privacy-respecting option)
+    - hkps://keyserver.ubuntu.com
 
 - if you used the key on GitHub, also remove the public key from GitHub
 
