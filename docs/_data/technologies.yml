@@ -48,6 +48,7 @@ github-copilot:
   topics:
     - "Dev Tools"
     - "MCP"
+    - "Dev Support"
   important:
     - name: "Github Copilot CLI: Configurations"
       url: "https://github.com/shadhini/daily-dev/blob/main/github-copilot-cli/configurations.md"
