@@ -49,6 +49,7 @@ dev-support:
     - "Digital ID"
     - "Digital Security"
     - "Software Licenses"
+    - "Computer Networks"
 cryptography:
   technologies:
     - "OpenPGP"
@@ -122,3 +123,9 @@ mcp:
 software-testing-and-QA:
   related-topics:
     - "Dev Tools"
+computer-networks:
+  related-topics:
+    - "Dev Support"
+  important:
+    - name: "What is MAC Address?"
+      url: "https://github.com/shadhini/daily-dev/blob/main/computer-networks/MAC-address.md"
