@@ -1,5 +1,9 @@
 # Generic Prompting Guidelines
 
+- Begin simple, then refine.
+- Break a big task into smaller, more manageable subtasks
+- Be specific about desired format, tone, and success
+
 1. Instructions
    - Define:
      - `Who` -- encourage an LLM to act as a persona 
@@ -41,4 +45,24 @@
       - The orchestration layer attaches the tool result as a special message in the conversation so the LLM can consume it
    6. LLM integrates the result and continues 
       - The LLM updates its state, may perform further reasoning or additional tool calls, and finally produces the user-facing output
+
+# Prompting Techniques
+
+1. `Few-shot Prompting`: 
+  - include a few (input → output) example pairs in the prompt to teach the pattern
+2. `Zero-shot Prompting`: 
+  - give a precise instruction without examples 
+3. `Chain-of-thought (CoT) Prompting`: 
+  - ask for step-by-step reasoning before the final answer
+  - 2 forms 
+    - `zero-shot`: where we explicitly include “Think step by step” in the instruction
+    - `few-shot`: where we show some examples with step-by-step reasoning
+4. `Role-specific Prompting`: 
+  - assign a persona to set context for the LLM
+    - e.g: “You are a financial advisor” 
+5. `Prompt Hierarchy`: 
+  - define system, developer, and user instructions with different levels of authority
+    - system prompts: define high-level goals and set guardrails 
+    - developer prompts: define formatting rules and customize the LLM’s behavior
+
 
