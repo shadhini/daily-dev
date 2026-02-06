@@ -19,6 +19,8 @@
     - title: Steghide
     - title: RemixIDE
     - title: Solidity
+    - title: Docker
+    - title: Git
 
 - title: Tech Catalog
   icon: journal-bookmark-fill

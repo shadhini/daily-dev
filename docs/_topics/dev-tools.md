@@ -31,6 +31,13 @@ render_with_liquid: false
 ## Build & Dependency Management Tools 
 - Maven
 - Gradle
+
+## Version Control Tools
+- Git
+- GitHub
+
+## Containerization Tools
+[containerization-tools](https://shadhini.github.io/daily-dev/topics/containerization-technologies/)
   
 ## Cryptographic Tools for securing/signing files/documents/commits
 

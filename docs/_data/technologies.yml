@@ -91,7 +91,7 @@ openssl:
     - "OpenPGP"
   important:
     - name: "OpenSSL: Commands"
-      url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/openssl-commands/"
+      url: "https://github.com/shadhini/daily-dev/tree/main/cryptographic-tools/openssl/openssl-commands/"
     - name: "OpenSSL: Configuration File"
       url: "https://github.com/shadhini/daily-dev/blob/main/cryptographic-tools/openssl/configurations/openssl.cnf"
     - name: "Best Practices: Key Management"
@@ -119,4 +119,17 @@ solidity:
     - "Dev Tools"
     - "Programming Language"
     - "Blockchain Development"
+git:
+  topics:
+    - "Dev Tools"
+  important:
+    - name: "Git: Commands"
+      url: "https://github.com/shadhini/daily-dev/tree/main/git-commands"
+docker:
+  topics:
+    - "Containerization Technologies"
+    - "Dev Tools"
+  important:
+    - name: "Docker & Docker Compose: Commands & Configurations"
+      url: "https://github.com/shadhini/docker-tryouts/tree/main/docs/docker-commands/"
 spring:

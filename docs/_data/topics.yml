@@ -32,6 +32,7 @@ dev-tools:
     - "OpenPGP"
     - "OpenSSL"
     - "RemixIDE"
+    - "Git"
   related-topics:
     - "Digital ID"
     - "Cryptography"
@@ -131,8 +132,7 @@ computer-networks:
       url: "https://github.com/shadhini/daily-dev/blob/main/computer-networks/MAC-address.md"
 workflow-automation-tools:
 containerization-technologies:
+  technologies:
+    - "Docker"
   related-topics:
     - "Dev Tools"
-  important:
-    - name: "Docker: Important Facts, Commands & Configurations"
-      url: "https://github.com/shadhini/daily-dev/blob/main/containerization-technologies/docker/"

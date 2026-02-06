@@ -19,6 +19,8 @@
     - title: Steghide
     - title: RemixIDE
     - title: Solidity
+    - title: Docker
+    - title: Git
 
 - title: Topics
   icon: bookmark-star-fill
