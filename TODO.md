@@ -8,6 +8,9 @@
 - [ ] add to tech-catalog [mysql](https://github.com/shadhini/daily-dev/blob/main/mysql)
 - [ ] add to tech-catalog [osgi-commands](https://github.com/shadhini/daily-dev/blob/main/osgi-commands)
 - [ ] add important links to topics: `Solidity`
+- [ ] update `README.md` with new directories and links to deep dive topic links of gitbook docs
+- [ ] add daily-dev tech catalog entries for technologies and concepts covered in gitbook docs
+- [ ] add complete list of important links to `docker` technology page
 
 topics to be added
 - "Blockchain Development"

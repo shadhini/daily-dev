@@ -5,7 +5,7 @@ render_with_liquid: false
 
 # Workflow Automation Tools
 
-`Airflow` | `Prefect 2`
+`Airflow` \|  `Prefect 2`
 
 
 ## Airflow

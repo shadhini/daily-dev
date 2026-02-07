@@ -5,31 +5,29 @@ render_with_liquid: false
 
 # Containerization Technologies
 
-System containers (lightweight VM-like):
-> `LXC/LXD`
+System containers (lightweight VM-like):\
+`LXC/LXD`
 
-Container runtimes / clients: 
-> `Docker` | `Podman`
+Container runtimes / clients: \
+`Docker` \| `Podman`
 
 Local multi-service composition:
-> `Docker Compose` 
-> `Kubernetes`
+`Docker Compose` \| `Kubernetes`
 
-Full Kubernetes distributions / enterprise & managed K8s:
-> `OpenShift`
-> `EKS (Amazon Elastic Kubernetes Service)`
-> `GKE (Google Kubernetes Engine)`
-> `AKS (Azure Kubernetes Service)`
+Full Kubernetes distributions / enterprise & managed K8s:\
+`OpenShift` \
+`EKS (Amazon Elastic Kubernetes Service)`\
+`GKE (Google Kubernetes Engine)`\
+`AKS (Azure Kubernetes Service)`
 
-Lightweight/local Kubernetes for dev & edge:
-> `Minikube` | `Kind` | `K3s` | `MicroK8s`
+Lightweight/local Kubernetes for dev & edge:\
+`Minikube` \| `Kind` \| `K3s` \| `MicroK8s`
 
-Kubernetes management / multi-cluster: 
-> `Rancher`
+Kubernetes management / multi-cluster:\
+`Rancher`
 
-Alternative schedulers / orchestrators (non‑Kubernetes): 
-> `Mesos` | `Nomad`
-> `ECS (Amazon Elastic Container Service)`
+Alternative schedulers / orchestrators (non‑Kubernetes):\
+`Mesos` \| `Nomad` \| `ECS (Amazon Elastic Container Service)`
 
 
 ## Docker Compose vs Kubernetes
@@ -39,8 +37,8 @@ Use `Docker Compose`
 - simple single-host stacks, quick prototypes
 - your team wants minimal ops overhead
 
-Use Kubernetes 
-- for `production-grade`
+Use `Kubernetes` 
+- for production-grade
 - multi-node orchestration with advanced features (scaling, self‑healing, service mesh, operators)
 - fine-grained scheduling, autoscaling, complex networking
 - run many services in production

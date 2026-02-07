@@ -2,7 +2,7 @@
 
 [Apache Synapse documentation](http://synapse.apache.org/)
 
-`an open-source Enterprise Service Bus (ESB)` | `mediation framework` 
+`an open-source Enterprise Service Bus (ESB)` \| `mediation framework` 
 * facilitates communication between different applications in a `SOA` (service-oriented architecture). 
 * lightweight and flexible platform for integrating and managing various services enabling 
   * interoperability and 
@@ -32,8 +32,8 @@
     - data formats conversion
 
 4. **Security:**
-    - `SSL/TLS` | `WS-Security` | `OAuth`
-    - authentication | authorization | encryption
+    - `SSL/TLS` \| `WS-Security` \| `OAuth`
+    - authentication \| authorization \| encryption
 
 5. **Scalability and Performance:**
     - high performance design 

@@ -18,7 +18,7 @@ personal certificate, company PKI, government eID, GPG key, YubiKey/PIV
 ## Practical Tools & Recommendations
 
 ### Personal/consumer:
-- `YubiKey` (`PIV: Personal Identity Verification` / `OpenPGP`) | `Nitrokey` 
+- `YubiKey` (`PIV: Personal Identity Verification` / `OpenPGP`) \| `Nitrokey` 
   - for storing private keys and for WebAuthn/FIDO2(Fast IDentity Online 2)
 - OS key store + password manager (`1Password`/`Bitwarden`) 
   - for storing PFX passphrases.

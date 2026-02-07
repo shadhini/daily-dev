@@ -132,4 +132,8 @@ docker:
   important:
     - name: "Docker & Docker Compose: Commands & Configurations"
       url: "https://github.com/shadhini/docker-tryouts/tree/main/docs/docker-commands/"
+    - name: "[Gitbook] Docker Deep Dive"
+      url: "https://shadhini-jayatilake.gitbook.io/code-compass/docker-tryouts/"
+    - name: "[Gitbook] Docker & Docker Compose: Commands & Configurations"
+      url: "https://shadhini-jayatilake.gitbook.io/code-compass/docker-tryouts/docker-commands/"
 spring:
