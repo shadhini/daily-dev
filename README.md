@@ -64,3 +64,29 @@ Welcome to **DevHelper**! 🚀 Your go-to collection of essential commands, codi
 Perfect for developers who want to boost productivity and keep their development process smooth and efficient. Happy coding! 💻🎉
 
 --- -->
+
+## 📄 License
+
+This repository uses a **dual-licensing structure**:
+
+### Apache 2.0 License (Default)
+
+The code, releases, and most content in this repository are licensed under the
+[Apache License 2.0](LICENSE), which allows you to:
+- Use the code for any purpose (commercial or personal)
+- Modify and distribute the code
+- Include it in your projects
+
+### Proprietary Content (Exceptions)
+
+**The following directories are NOT covered by the Apache 2.0 license:**
+
+- `docs/` - All rights reserved
+
+Content in this directory may not be copied, modified, distributed, or used
+without explicit permission. See the LICENSE files in `docs/` directory for details.
+
+### Summary
+
+✅ **You CAN use:** Code snippets, releases, and content outside the restricted directories  
+❌ **You CANNOT use:** Anything inside `docs/`  directory

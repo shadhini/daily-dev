@@ -1,0 +1,11 @@
+daily-dev
+Copyright 2026 Shadhini Jayatilake
+
+This product includes software licensed under the Apache License 2.0.
+See LICENSE file for details.
+
+EXCEPTIONS:
+- docs/ directory: All rights reserved
+
+These directories contain proprietary documentation and are not licensed 
+under the Apache License 2.0.

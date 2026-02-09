@@ -1,0 +1,21 @@
+# License Notice for docs/ Directory
+
+All contents within the `docs/` directory are **proprietary and confidential**.
+
+**All rights reserved.** © Shadhini Jayatilake, 2026
+
+## Restrictions
+
+The materials in this directory are NOT licensed under the Apache 2.0 license 
+that covers the rest of the repository. 
+
+You may NOT:
+- Copy, modify, or distribute any content from this directory
+- Use the documentation for commercial purposes
+- Create derivative works based on this documentation
+- Redistribute this documentation in any form
+
+## Permitted Use
+
+You may only view this documentation for personal reference when using the 
+code from other parts of this repository that ARE licensed under Apache 2.0.
