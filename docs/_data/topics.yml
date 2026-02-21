@@ -136,3 +136,8 @@ containerization-technologies:
     - "Docker"
   related-topics:
     - "Dev Tools"
+hosting:
+    technologies:
+        - "Hostinger"
+    related-topics:
+        - "Dev Tools"

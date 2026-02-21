@@ -136,4 +136,7 @@ docker:
       url: "https://shadhini-jayatilake.gitbook.io/code-compass/docker-tryouts/"
     - name: "[Gitbook] Docker & Docker Compose: Commands & Configurations"
       url: "https://shadhini-jayatilake.gitbook.io/code-compass/docker-tryouts/docker-commands/"
+hostinger:
+  topics:
+    - "Hosting"
 spring:
