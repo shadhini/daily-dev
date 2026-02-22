@@ -19,3 +19,9 @@ When to Use
 - need dynamic workflows and flexible execution
 - prioritize ease of use for Python developers
 - require strong MLOps integration and artifact management
+
+## n8n
+an open, extensible workflow automation tool that 
+lets you visually compose automated workflows (integrations, ETL, notifications, etc.) 
+by connecting “nodes” (apps, code, triggers)
+- you can self‑host it or use n8n Cloud
