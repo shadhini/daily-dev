@@ -109,9 +109,13 @@ Good for: forms, approvals, casual contracts.
 - You can (recommended/common) create an OpenPGP detached signature for the PDF (or sign/encrypt the PDF as an OpenPGP object)
 - That lets anyone with your public key cryptographically verify the PDF’s integrity and origin, but they must verify with GPG (or extract the signature) — PDF viewers will not show it as a “signed PDF”
 
+## Formatting Flash Drives
 
-
-
-
+@Windows OS:
+Windows Icon ➔ Disk Management
+- Check drive letter, capacity & removability to identify the flash drive
+- Delete small volumes (if any) to get unallocated space
+- Right-click unallocated space → New Simple Volume → Format with FAT32 (for drives ≤32GB) or exFAT (for larger drives)
+- Then reformat the particular drive letter in File Explorer 
 
 
