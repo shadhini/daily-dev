@@ -98,7 +98,9 @@ digital-security:
     - "Day-to-Day"
   important:
     - name: "Security Attacks"
-      url: "https://github.com/shadhini/daily-dev/blob/main/security-attacks/"
+      url: "https://github.com/shadhini/daily-dev/tree/main/security-attacks/"
+    - name: "Security Mechanisms"
+      url: "https://github.com/shadhini/daily-dev/tree/main/security-mechanisms/"
 software-licenses:
   related-topics:
     - "Dev Support"
@@ -141,3 +143,11 @@ hosting:
         - "Hostinger"
     related-topics:
         - "Dev Tools"
+linux:
+  related-topics:
+    - "Dev Tools"
+  important:
+    - name: "Linux: Administration & Security"
+      url: "https://github.com/shadhini/daily-dev/tree/main/linux/administation-n-security"
+    - name: "Linux: Management"
+      url: "https://github.com/shadhini/daily-dev/tree/main/linux/management"
