@@ -136,6 +136,8 @@ docker:
       url: "https://shadhini-jayatilake.gitbook.io/code-compass/docker-tryouts/"
     - name: "[Gitbook] Docker & Docker Compose: Commands & Configurations"
       url: "https://shadhini-jayatilake.gitbook.io/code-compass/docker-tryouts/docker-commands/"
+    - name: "Popular Docker Images for Development"
+      url: "https://github.com/shadhini/daily-dev/blob/main/docker/about-popular-images.md"
 hostinger:
   topics:
     - "Hosting"
