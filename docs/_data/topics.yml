@@ -151,3 +151,5 @@ linux:
       url: "https://github.com/shadhini/daily-dev/tree/main/linux/administation-n-security"
     - name: "Linux: Management"
       url: "https://github.com/shadhini/daily-dev/tree/main/linux/management"
+    - name: "Linux: Command Line Tools"
+      url: "https://github.com/shadhini/daily-dev/tree/main/linux/command-line-tools"

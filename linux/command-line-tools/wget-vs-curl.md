@@ -1,0 +1,10 @@
+# Wget vs Curl
+
+| Aspect                | wget                                                                                                 | curl                                                                                                                           |
+|-----------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Primary purpose       | Non-interactive file downloader — great for downloading files and whole sites recursively/mirroring. | General-purpose data-transfer tool and library (libcurl) for making arbitrary requests and manipulating request/response data. |
+| Output                | Saves to files by default.                                                                           | Writes the response to stdout by default (easy to pipe).                                                                       |
+| Recursive / mirroring | Built-in (e.g., `wget -r`, `wget --mirror`).                                                         | No built-in recursive mode.                                                                                                    |
+| Protocols             | HTTP/HTTPS/FTP and a few more.                                                                       | Supports many protocols (HTTP/HTTPS/FTP/FTPS/SCP/SFTP/LDAP/SMB/SMTP/etc.); may support HTTP/2 and HTTP/3 depending on build.   |
+| Library               | Not typically used as a library.                                                                     | libcurl can be embedded in programs.                                                                                           |
+| Use cases             | Grabbing files, mirroring sites, resuming downloads, background/unattended downloads.                | Interacting with web APIs, sending POST/PUT, custom headers, authentication, uploads, and testing endpoints.                   |
