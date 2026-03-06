@@ -153,3 +153,7 @@ linux:
       url: "https://github.com/shadhini/daily-dev/tree/main/linux/management"
     - name: "Linux: Command Line Tools"
       url: "https://github.com/shadhini/daily-dev/tree/main/linux/command-line-tools"
+    - name: "Bash Commands & Syntax"
+      url: "https://github.com/shadhini/daily-dev/tree/main/linux/bash-commands-and-syntax"
+    - name: "Bash Reusable Utilities"
+      url: "https://github.com/shadhini/daily-dev/tree/main/linux/bash-utils"
