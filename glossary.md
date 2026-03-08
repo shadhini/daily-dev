@@ -15,3 +15,11 @@
 `macro`:
 - a small program/ script embedded inside a document/ application that automates tasks
 
+`Setup Pakcege` | `Installer`:
+- e.g: Windows installer (.msi or setup.exe) 
+- runs an installation process, writes files to Program Files (or per-user locations), may register file 
+associations, services, and registry keys, and adds Start Menu / Control Panel entries
+
+`Portable Package`
+- a self-contained folder or single executable that you unzip/run without a system install
+- it keeps its files and settings inside its folder and generally does not modify system-wide state
