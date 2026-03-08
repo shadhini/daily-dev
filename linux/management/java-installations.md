@@ -11,7 +11,6 @@
   - a community project (2017–2021) that produced prebuilt OpenJDK binaries for many platforms
   - in 2021 the build/infra moved to the Eclipse Foundation under the `Adoptium` working group
     - their binary distribution is called Temurin
-- 
 
 `OpneJDK` & `AdoptOpenJDK/Adoptium/Temurin` Differences
 - who builds/distributes the binaries
