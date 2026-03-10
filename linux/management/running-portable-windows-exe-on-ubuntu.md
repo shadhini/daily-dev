@@ -99,6 +99,6 @@ Recommendation:
   - building reproducible test environments
   - when you want environment portability
 - Tips: 
-  - use existing images (e.g., jlesage/wine or scottyhardy/docker-wine) as a starting poinr
+  - use existing images (e.g., jlesage/wine or scottyhardy/docker-wine) as a starting point
   - map X11 socket or use xpra for GUI
 
