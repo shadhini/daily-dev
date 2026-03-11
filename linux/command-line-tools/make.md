@@ -44,3 +44,56 @@
 ✅ Readability - Self-documenting compared to shell scripts
 ✅ Automation - Chains multiple commands into single target
 ✅ Team collaboration - Everyone uses the same commands
+
+## Makefile Notation
+
+A Makefile is a list of recipes.
+- Each recipe has 
+  - a name (`target`), 
+  - a list of ingredients (`prerequisites`/`dependencies`), and 
+  - the steps (`commands`) to make it. 
+- When you run `make <target>`, 
+  - make checks whether the target needs rebuilding (by looking at files/timestamps)
+  - if yes, it runs the commands
+
+```Makefile
+# 1) "all" is the default target: run `make` to build it
+.PHONY: all clean
+
+all: hello        # target "all" depends on target/file "hello"
+
+# 2) "hello" is built from "main.o"
+hello: main.o
+	# (this line MUST start with a TAB character)
+	$(CC) -o $@ $^   # link: $@ = target name (hello), $^ = all prerequisites (main.o)
+
+# 3) how to make a .o file from .c (pattern rule)
+%.o: %.c
+	$(CC) -c -o $@ $<  # $< = first prerequisite (the .c file)
+
+# 4) clean up files (phony so it always runs)
+clean:
+	rm -f hello *.o
+```
+
+- Target line: `target: prerequisite1 prerequisite2`
+   - Example: `hello: main.o`
+   - Means “to make hello, I need main.o”.
+- Recipe (commands): the lines below a target — they do the work.
+   - Important: each command line must start with a real `TAB` character (not spaces).
+   - Example: `(TAB)$(CC) -o $@ $^`
+- Variables: you can use names for repeated values, e.g. `CC = gcc`
+- Automatic variables (shortcuts inside recipes):
+   - `$@` → the target’s name (the thing being made)
+   - `$^` → all prerequisites (files needed)
+   - `$<` → the first prerequisite (useful in compile rules)
+- Pattern rule: `%.o: %.c` means `“to make X.o, use X.c”` — handy for many files.
+- `.PHONY`: names listed here are not real files — they always run when requested.
+   - Why: if a file called `clean` exists, without `.PHONY` make might think clean is already up-to-date and skip the commands. `.PHONY` avoids that.
+
+
+How to use it (commands)
+- `make`       → builds the first target (usually all)
+- `make hello` → builds the hello target only
+- `make clean` → runs the clean recipe (removes build files)
+
