@@ -65,6 +65,25 @@ sudo apt install --install-recommends wine32 wine64 winbind
 
 sudo apt install mono-complete
 
+# install additional packages for better compatibility and fonts
+sudo add-apt-repository -y universe
+sudo add-apt-repository -y multiverse
+sudo apt update
+
+# Preseed the Microsoft core fonts EULA so ttf-mscorefonts-installer won't prompt
+echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+
+# Optional: preseed tzdata if apt will prompt for timezone (example: set UTC)
+echo "tzdata tzdata/Areas select Etc" | sudo debconf-set-selections
+echo "tzdata tzdata/Zones/Etc select UTC" | sudo debconf-set-selections
+
+# Install non-interactively; pass dpkg options to keep current confs and avoid prompts
+sudo DEBIAN_FRONTEND=noninteractive \
+  apt-get install -y -o Dpkg::Options::="--force-confdef" \
+                       -o Dpkg::Options::="--force-confold" \
+                       --no-install-recommends \
+                       winetricks cabextract unzip p7zip-full fonts-noto ttf-mscorefonts-installer
+
 wine --version
 ```
 
