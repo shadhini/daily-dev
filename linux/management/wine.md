@@ -122,6 +122,3 @@ WINEPREFIX="$HOME/.wine32" wine msiexec /i ~/Downloads/wine-mono-9.1.0-x86.msi
 
 WINEPREFIX="$HOME/.wine32" winetricks -q dotnet48 
 ```
-
-
-
