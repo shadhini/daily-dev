@@ -4,8 +4,21 @@ Install GnuPG
 - Linux: package manager (apt/yum/pacman)
 
       sudo apt install gnupg
+  
 - Windows: Gpg4win (includes Kleopatra)
 - macOS: GPG Suite
+
+      brew update brew install gnupg pinentry-mac
+
+  - Configure pinentry so macOS prompts for your passphrase
+
+            mkdir -p ~/.gnupg
+            chmod 700 ~/.gnupg
+            echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+
+  - Then, restart the agent
+  
+            gpgconf --kill gpg-agent
 
 
 ## Create and maintain an OpenPGP key (free) — for signing emails/files/git
