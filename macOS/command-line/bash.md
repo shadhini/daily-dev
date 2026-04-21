@@ -78,3 +78,9 @@ compare differences
     diff <FILE_1> <FILE_2>
     cmp <FILE_1> <FILE_2>
 
+
+## Checksum of a file
+
+find sha 256 checksum of a file
+
+    shasum -a 256 <FILE_PATH>

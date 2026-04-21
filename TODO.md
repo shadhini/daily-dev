@@ -1,5 +1,7 @@
 # TODOs
 
+- [ ] Docs section to be revised 
+
 - [ ] refine & reorganize & verify [jekyll.md](https://github.com/shadhini/daily-dev/blob/main/docs/_technologies/jekyll.md)
 - [ ] add to tech-catalog [clean-coding](https://github.com/shadhini/daily-dev/blob/main/clean-coding)
 - [ ] add to tech-catalog [design-patterns](https://github.com/shadhini/daily-dev/blob/main/design-patterns)

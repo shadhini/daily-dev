@@ -16,3 +16,13 @@
 #### number of logical processors
 
     sysctl hw.logicalcpu
+
+# MAC Health and Performance Checks
+
+thermal pressure check:
+- `Nominal`: the system is running within normal thermal limits
+- `Fair`: the system is experiencing some thermal stress, but it’s not critical
+- `Serious`: the system is under significant thermal stress, which may lead to performance degradation
+- `Critical`: the system is at a critical thermal state, and performance may be severely impacted to prevent overheating 
+
+    sudo powermetrics -s thermal

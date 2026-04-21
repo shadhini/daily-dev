@@ -8,7 +8,8 @@ Install GnuPG
 - Windows: Gpg4win (includes Kleopatra)
 - macOS: GPG Suite
 
-      brew update brew install gnupg pinentry-mac
+      brew update 
+      brew install gnupg pinentry-mac
 
   - Configure pinentry so macOS prompts for your passphrase
 
