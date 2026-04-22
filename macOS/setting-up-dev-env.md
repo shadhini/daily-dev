@@ -72,4 +72,8 @@
 - `Zoom` 
   - download from the web
 - `Docker Desktop`
-  - download from the web
+  - download from the web: download the Apple Silicon version
+  - prerequisites: 
+    - @terminal: `softwareupdate --install-rosetta --agree-to-license`
+    - Docker requires `Rosetta` because some of its internal helper tools are still built for Intel chips, and it uses `Rosetta` to allow you to run Intel-based containers alongside native ones. It essentially acts as a compatibility bridge to ensure all features and images work seamlessly on Apple Silicon.
+- 
