@@ -26,7 +26,7 @@
 - `Visual Studio Code` 
     - download from the web
     - OR `brew install --cask visual-studio-code`
-    - install extensions: `Markdown All in One`, `Git Graph`,`GitLens`, `Docker`, `Dev Containers`
+    - install extensions: `Markdown All in One`, `Git Graph`,`GitLens`, `Docker`, `Dev Containers`, `Markdown Preview Enhanced`
 - `Homebrew`
     ```bash
     # install
@@ -69,5 +69,7 @@
 - `python`
   - `brew install python@3.11`
   - `python3.11`: opens python 3.11 interpreter
+- `Zoom` 
+  - download from the web
 - `Docker Desktop`
   - download from the web
