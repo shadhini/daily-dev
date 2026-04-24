@@ -1,4 +1,4 @@
-# Setting Environment Variables in Bash: `: "${VAR:=default}"` vs `VAR=${VAR:-default}`
+# Setting Environment Variables in POSIX Shell Script: `: "${VAR:=default}"` vs `VAR=${VAR:-default}`
 
 
 ## **1. `: "${ENVIRONMENT:=development}"`**
