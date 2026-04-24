@@ -26,7 +26,7 @@
 - `Visual Studio Code` 
     - download from the web
     - OR `brew install --cask visual-studio-code`
-    - install extensions: `Markdown All in One`, `Git Graph`,`GitLens`, `Docker`, `Dev Containers`, `Markdown Preview Enhanced`
+    - install extensions: `Markdown All in One`, `Git Graph`,`GitLens`, `Docker`, `Dev Containers`, `Markdown Preview Enhanced`, `Markdown PDF`
 - `Homebrew`
     ```bash
     # install
@@ -60,7 +60,7 @@
     - `brew install --cask iterm2`
 - `PyCharm`
     - download from the web: professional version
-    - plugins: `Github Copilot`, 
+    - plugins: `Github Copilot`, `Makefile Language`, 
 - `Github Copilot CLI`
     - `brew install copilot-cli`
 - `GCM: Git Credential Manager`
@@ -76,4 +76,18 @@
   - prerequisites: 
     - @terminal: `softwareupdate --install-rosetta --agree-to-license`
     - Docker requires `Rosetta` because some of its internal helper tools are still built for Intel chips, and it uses `Rosetta` to allow you to run Intel-based containers alongside native ones. It essentially acts as a compatibility bridge to ensure all features and images work seamlessly on Apple Silicon.
-- 
+  - post-installation: 
+    - if `Docker Desktop` > `General` > `"Configure shell completions"` gives an error or warning
+      - `mkdir -p ~/.zsh/completions` and try installing completions again via `Docker Desktop` > `General` > `"Configure shell completions"` 
+      - [not necessary] `docker completion zsh > ~/.zsh/completions/_docker`
+      - [not necessary] `vim ~/.zshrc` and add lines: `fpath=(~/.zsh/completions $fpath)`, `autoload -Uz compinit && compinit`
+      - [not necessary] `source ~/.zshrc`
+- `DBeaver`: cross platform database management tool
+  - `brew install --cask dbeaver-community`
+- `mysql`: install mysql server
+  - `brew install mysql`
+  - `brew services start mysql`
+  - `mysql_secure_installation`: run this command to set the root password and secure your MySQL installation after installing the server
+  - Start MySQL server: `brew services start mysql`
+  - Stop MySQL server: `brew services stop mysql`
+

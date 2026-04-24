@@ -1,5 +1,18 @@
 # MySQL Configurations
 
+## Common socket locations and how to find them
+
+Common socket paths: 
+    
+        /tmp/mysql.sock or 
+        /opt/homebrew/var/run/mysql/mysql.sock (depends on formula/version and config)
+
+To discover which socket your mysql binary will use: 
+
+        mysql --help | grep socket
+
+`DBeaver`: if connecting to a local Homebrew server via socket, set the socket path in connection settings; otherwise use 127.0.0.1 and a TCP port.
+
 ## MySQL Configuration file
 MySQL Configuration file: `my.cnf` or `my.ini`
 * Default options are read from the following mysql configuration files in the given order:
