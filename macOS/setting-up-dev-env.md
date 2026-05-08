@@ -21,7 +21,7 @@
 
 # Installing must have software
 
-- `Chrome` 
+- `Google Chrome` 
     - download from the web 
 - `Visual Studio Code` 
     - download from the web
@@ -60,7 +60,7 @@
     - `brew install --cask iterm2`
 - `PyCharm`
     - download from the web: professional version
-    - plugins: `Github Copilot`, `Makefile Language`, 
+    - plugins: `Github Copilot`, `Makefile Language`, `Shellcheck`
 - `Github Copilot CLI`
     - `brew install copilot-cli`
 - `GCM: Git Credential Manager`
@@ -90,4 +90,7 @@
   - `mysql_secure_installation`: run this command to set the root password and secure your MySQL installation after installing the server
   - Start MySQL server: `brew services start mysql`
   - Stop MySQL server: `brew services stop mysql`
-
+- `git lfs`: Git Large File Storage for managing large files in git repositories
+  - `brew install git-lfs`
+- `git-filter-repo`: tool for rewriting git history, often used in conjunction with git lfs to remove large files from git history
+  - `brew install git-filter-repo`
