@@ -94,3 +94,5 @@
   - `brew install git-lfs`
 - `git-filter-repo`: tool for rewriting git history, often used in conjunction with git lfs to remove large files from git history
   - `brew install git-filter-repo`
+- `p7zip`: command-line utility for handling 7z archives, which is useful for compressing and decompressing files in a more efficient format than zip
+  - `brew install p7zip`

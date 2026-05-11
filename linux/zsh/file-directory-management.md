@@ -37,3 +37,17 @@ find sha 256 checksum of a file
 
     shasum -a 256 <FILE_PATH>
 
+## Merging Directories/Archives
+
+merge contents of 2 directories into a new directory
+
+    mkdir merged_dir
+    cp -r dir1/* merged_dir/
+    cp -r dir2/* merged_dir/
+
+extract .zip archives to a merged directory
+
+    # place all zips in one folder
+    # use 7z to extract all zips
+    7z x 'BattiFF-20260509T070527Z-3-001.zip' 
+    7z x 'BattiFF-20260509T070527Z-3-002.zip' 
