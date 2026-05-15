@@ -6,6 +6,8 @@
 ---
 
     SELECT user, host, authentication_string FROM mysql.user;
+
+    SELECT user, host, plugin, HEX(authentication_string) AS auth_hex FROM mysql.user;
 ---
 
     CREATE USER 'test'@'localhost' IDENTIFIED WITH 'mysql_native_password';

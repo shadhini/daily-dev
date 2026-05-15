@@ -96,3 +96,19 @@
   - `brew install git-filter-repo`
 - `p7zip`: command-line utility for handling 7z archives, which is useful for compressing and decompressing files in a more efficient format than zip
   - `brew install p7zip`
+- `BetterDisplay`: a tool for managing multiple displays and their resolutions on macOS, especially useful for developers who use external monitors
+  - download from the web
+  - adds a menu bar icon for quick access to display settings and allows you to create custom resolutions, which can be helpful for testing responsive designs or optimizing screen real estate for development work
+
+# MSI wide screen monitor over HDMI settings:
+
+MSI OSD (On-Screen Display) Menu:
+- Settings
+  - Input Source
+    - HDMI: select this to use the HDMI input for your monitor
+    - AutoScan: off
+  - Power Button: Standby
+  - Eco Mode: off
+  - Adaptive Sync: on
+  - HDMI CEC: off
+  - User Mode / sRGB Mode
