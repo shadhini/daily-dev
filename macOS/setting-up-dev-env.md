@@ -99,6 +99,33 @@
 - `BetterDisplay`: a tool for managing multiple displays and their resolutions on macOS, especially useful for developers who use external monitors
   - download from the web
   - adds a menu bar icon for quick access to display settings and allows you to create custom resolutions, which can be helpful for testing responsive designs or optimizing screen real estate for development work
+- `starship`: cross-shell prompt;  a minimal, blazing-fast, and infinitely customizable prompt for any shell
+  - better when adding screenshots to blogs, clean and clear terminal
+  - https://starship.rs/guide/
+  - Prerequisites: Install Fira Code Nerd Fonts
+    - `brew install --cask font-fira-code-nerd-font`
+  - Enable the Font in the Terminal
+    - For iTerm2:
+      - 1.	iTerm2 → Preferences/Settings (Cmd + ,).
+      - 2.	→ Profiles tab → select the profile you want to configure(Default)
+      - 3.	→ Text sub-tab → Font → Change Font
+      - 4.	Search and select FiraCode Nerd Font 
+      - 5.	Adjust the font size as needed 
+    - For Terminal (Mac’s default terminal):
+  		- 1.	Open Terminal and go to Preferences (or press Cmd + ,).
+  		- 2.	Click on the profile you wish to modify (e.g., Basic, Pro, etc.).
+      - 3.	Under the Text tab, click on the font dropdown menu next to Font.
+      - 4.	Select FiraCode Nerd Font from the list.
+      - 5.	Adjust the font size if needed.
+  - Verify the Font
+    - `ls -la`
+  - Install Starship cross-shell prompt
+    - `brew install starship`
+  - Set up your shell to use Starship
+    - Add the following to the end of `~/.zshrc`:
+      ```sh
+      eval "$(starship init zsh)"
+      ```
 
 # MSI wide screen monitor over HDMI settings:
 
