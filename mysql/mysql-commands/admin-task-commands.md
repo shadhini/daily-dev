@@ -6,17 +6,20 @@
 ---
 
     SELECT user, host, authentication_string FROM mysql.user;
-
     SELECT user, host, plugin, HEX(authentication_string) AS auth_hex FROM mysql.user;
 ---
 
-    CREATE USER 'test'@'localhost' IDENTIFIED WITH 'mysql_native_password';
----
-
-    ALTER USER 'test'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'testpassword';
----
-
+    CREATE USER 'test'@'localhost' IDENTIFIED WITH 'mysql_native_password'; 
     CREATE USER 'test'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'testpassword';
+    <!-- plugin: `mysql_native_password` -->
+
+    CREATE USER '<USER_NAME>'@'%' IDENTIFIED BY '<PASSWORD>'; 
+    <!-- plugin: `caching_sha2_password` -->
+
+    ALTER USER 'myuser'@'host' IDENTIFIED WITH caching_sha2_password BY 'your_password'; 
+    ALTER USER 'test'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'testpassword';
+
+    FLUSH PRIVILEGES;
 ---
 
     show databases;
