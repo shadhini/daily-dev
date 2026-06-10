@@ -120,8 +120,10 @@
       - [not necessary] `source ~/.zshrc`
 - `PyCharm`
     - download from the web: professional version
-    - plugins: `Github Copilot`, `Makefile Language`, `Shellcheck`, `Mermaid`
+    - plugins: `Github Copilot`, `Waka Time`, `Makefile Language`, `Mermaid`, ~~`Shellcheck`~~
 - `Zoom` 
+  - download from the web
+- `Google Drive`: only if you sync your local files/folders with Google Drive
   - download from the web
 - `DBeaver`: cross platform database management tool
   - `brew install --cask dbeaver-community`
