@@ -20,6 +20,7 @@ Install GnuPG
   - Then, restart the agent
   
             gpgconf --kill gpg-agent
+            gpgconf --launch gpg-agent
 
 
 ## Create and maintain an OpenPGP key (free) — for signing emails/files/git
@@ -44,13 +45,13 @@ Make a revocation certificate (very important)
 
 Export public key (ASCII-armored)
 
-   gpg --armor --export <KEYID> > my-public-key.asc
+    gpg --armor --export <KEYID> > my-public-key.asc
 
 Backup/export your private key 
 
 - rarely do this; keep offline
 
-    gpg --export-secret-keys --armor <KEYID> > my-private-key.asc
+      gpg --export-secret-keys --armor <KEYID> > my-private-key.asc
 
 - encrypt that file and store passphrase in a password manager or store it in an encrypted vault
   

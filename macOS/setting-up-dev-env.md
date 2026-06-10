@@ -23,10 +23,6 @@
 
 - `Google Chrome` 
     - download from the web 
-- `Visual Studio Code` 
-    - download from the web
-    - OR `brew install --cask visual-studio-code`
-    - install extensions: `Markdown All in One`, `Git Graph`,`GitLens`, `Docker`, `Dev Containers`, `Markdown Preview Enhanced`, `Markdown PDF`
 - `Homebrew`
     ```bash
     # install
@@ -56,49 +52,12 @@
     brew list
     ```
     - this usually installs `git`, `python3`, and other command-line tools that are essential for development
+- `Visual Studio Code` 
+    - download from the web
+    - OR `brew install --cask visual-studio-code`
+    - install extensions: `Markdown All in One`, `Git Graph`,`GitLens`, `Docker`, `Dev Containers`, `Markdown Preview Enhanced`, `Markdown PDF`
 - `iTerm2`
     - `brew install --cask iterm2`
-- `PyCharm`
-    - download from the web: professional version
-    - plugins: `Github Copilot`, `Makefile Language`, `Shellcheck`
-- `Github Copilot CLI`
-    - `brew install copilot-cli`
-- `GCM: Git Credential Manager`
-    - `brew install --cask git-credential-manager-core`
-    - Setup git - [configure git and git signing](https://github.com/shadhini/daily-dev/blob/main/git-commands/signing-commits-and-git-configurations.md)
-- `python`
-  - `brew install python@3.11`
-  - `python3.11`: opens python 3.11 interpreter
-- `Zoom` 
-  - download from the web
-- `Docker Desktop`
-  - download from the web: download the Apple Silicon version
-  - prerequisites: 
-    - @terminal: `softwareupdate --install-rosetta --agree-to-license`
-    - Docker requires `Rosetta` because some of its internal helper tools are still built for Intel chips, and it uses `Rosetta` to allow you to run Intel-based containers alongside native ones. It essentially acts as a compatibility bridge to ensure all features and images work seamlessly on Apple Silicon.
-  - post-installation: 
-    - if `Docker Desktop` > `General` > `"Configure shell completions"` gives an error or warning
-      - `mkdir -p ~/.zsh/completions` and try installing completions again via `Docker Desktop` > `General` > `"Configure shell completions"` 
-      - [not necessary] `docker completion zsh > ~/.zsh/completions/_docker`
-      - [not necessary] `vim ~/.zshrc` and add lines: `fpath=(~/.zsh/completions $fpath)`, `autoload -Uz compinit && compinit`
-      - [not necessary] `source ~/.zshrc`
-- `DBeaver`: cross platform database management tool
-  - `brew install --cask dbeaver-community`
-- `mysql`: install mysql server
-  - `brew install mysql`
-  - `brew services start mysql`
-  - `mysql_secure_installation`: run this command to set the root password and secure your MySQL installation after installing the server
-  - Start MySQL server: `brew services start mysql`
-  - Stop MySQL server: `brew services stop mysql`
-- `git lfs`: Git Large File Storage for managing large files in git repositories
-  - `brew install git-lfs`
-- `git-filter-repo`: tool for rewriting git history, often used in conjunction with git lfs to remove large files from git history
-  - `brew install git-filter-repo`
-- `p7zip`: command-line utility for handling 7z archives, which is useful for compressing and decompressing files in a more efficient format than zip
-  - `brew install p7zip`
-- `BetterDisplay`: a tool for managing multiple displays and their resolutions on macOS, especially useful for developers who use external monitors
-  - download from the web
-  - adds a menu bar icon for quick access to display settings and allows you to create custom resolutions, which can be helpful for testing responsive designs or optimizing screen real estate for development work
 - `starship`: cross-shell prompt;  a minimal, blazing-fast, and infinitely customizable prompt for any shell
   - better when adding screenshots to blogs, clean and clear terminal
   - https://starship.rs/guide/
@@ -126,6 +85,59 @@
       ```sh
       eval "$(starship init zsh)"
       ```
+- `Github Copilot CLI`
+    - `brew install copilot-cli`
+- `GCM: Git Credential Manager`
+    - `brew install --cask git-credential-manager`
+    - Setup git - [configure git and git signing](https://github.com/shadhini/daily-dev/blob/main/git-commands/signing-commits-and-git-configurations.md)
+- `BetterDisplay`: a tool for managing multiple displays and their resolutions on macOS, especially useful for developers who use external monitors
+  - download from the web
+  - adds a menu bar icon for quick access to display settings and allows you to create custom resolutions, which can be helpful for testing responsive designs or optimizing screen real estate for development work
+- `Freeplane`: a free, open-source software application designed for mind mapping
+  - download from the web
+  - desktop application
+  - popular among developers, good quality PDF & image export options, side tree view 
+  - have to manually sync the freeplane mind map folder with cloud storage (e.g., iCloud, Google Drive) to access mind maps across devices
+  - alternative: `WiseMapping`
+     - free and open-source 100% 
+     - web based option works better with cloud storage, complex diagrams cannot be properly imported/exported between `Freeplane` and `WiseMapping`
+     - not as popular as `Freeplane` at the moment (May 2026) and not sure about the security and privacy of the mindmaps created and stored on web-based tool
+     - good quality PDF & image export options
+     - Desktop application cannot be installed on Apple Silicon Macs due to Security check failure
+- `python`
+  - `brew install python@3.11`
+  - `python3.11`: opens python 3.11 interpreter
+- `Docker Desktop`
+  - download from the web: download the Apple Silicon version
+  - prerequisites: 
+    - @terminal: `softwareupdate --install-rosetta --agree-to-license`
+    - Docker requires `Rosetta` because some of its internal helper tools are still built for Intel chips, and it uses `Rosetta` to allow you to run Intel-based containers alongside native ones. It essentially acts as a compatibility bridge to ensure all features and images work seamlessly on Apple Silicon.
+  - post-installation: 
+    - if `Docker Desktop` > `General` > `"Configure shell completions"` gives an error or warning
+      - `mkdir -p ~/.zsh/completions` and try installing completions again via `Docker Desktop` > `General` > `"Configure shell completions"` 
+      - [not necessary] `docker completion zsh > ~/.zsh/completions/_docker`
+      - [not necessary] `vim ~/.zshrc` and add lines: `fpath=(~/.zsh/completions $fpath)`, `autoload -Uz compinit && compinit`
+      - [not necessary] `source ~/.zshrc`
+- `PyCharm`
+    - download from the web: professional version
+    - plugins: `Github Copilot`, `Makefile Language`, `Shellcheck`, `Mermaid`
+- `Zoom` 
+  - download from the web
+- `DBeaver`: cross platform database management tool
+  - `brew install --cask dbeaver-community`
+- `mysql`: install mysql server
+  - `brew install mysql`
+  - `brew services start mysql`
+  - `mysql_secure_installation`: run this command to set the root password and secure your MySQL installation after installing the server
+  - Start MySQL server: `brew services start mysql`
+  - Stop MySQL server: `brew services stop mysql`
+- `git lfs`: Git Large File Storage for managing large files in git repositories
+  - `brew install git-lfs`
+- `git-filter-repo`: tool for rewriting git history, often used in conjunction with git lfs to remove large files from git history
+  - `brew install git-filter-repo`
+- `p7zip`: command-line utility for handling 7z archives, which is useful for compressing and decompressing files in a more efficient format than zip
+  - `brew install p7zip`
+
 
 # MSI wide screen monitor over HDMI settings:
 

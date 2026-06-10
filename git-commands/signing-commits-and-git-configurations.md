@@ -17,11 +17,13 @@
 - Git Credential Manager (recommended for modern setups)
   - the modern, cross‑platform, actively maintained helper that handles PATs, multi‑factor flows, and token refresh
 
-		brew install --cask git-credential-manager-core git config --global credential.helper manager-core
+		brew install --cask git-credential-manager 
+		git config --global credential.helper manager-core
 
 ---
 
-	git config --show-origin --get-all credential.helper git config --global --get-all credential.helper
+	git config --show-origin --get-all credential.helper 
+	git config --global --get-all credential.helper
 
 
 ---
@@ -43,9 +45,24 @@
 
 ---
 
-	gpg --full-generate-key
+Generate gpg key for signing commits
+
+	gpg --expert --full-generate-key
+- choose ECC, ed25519 for signing and authentication, add an encryption subkey using Curve25519
+
+Make a revocation certificate (very important)
+    
+    gpg --output revoke.asc --gen-revoke <KEYID>
+- Store `revoke.asc` offline (USB or printed QR), not on the same system
+
+Export public key (ASCII-armored)
+
+	gpg --armor --export <KEYID> > git-public-key.asc
+
+Then,
+
+	gpg --list-keys --keyid-format LONG
 	gpg --list-secret-keys --keyid-format LONG
-	gpg --armor --export <YOUR_KEY_ID>
 	gpgconf --kill gpg-agent
 	gpgconf --launch gpg-agent
 
