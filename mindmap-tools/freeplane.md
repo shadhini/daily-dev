@@ -39,3 +39,13 @@ To update your current map's core template:
 Look for the Core Text / Format section and change its dropdown setting to `Markdown`.  
    4. click `OK` to save and exit 
 
+## Connect Two Nodes
+
+Click the first node, hold `Shift`, click the second node to select both
+- press `Ctrl` + `L`
+- OR right-click on one of the selected nodes > `Connect` 
+
+## Remove Connections
+
+Right-click directly on the connecting line > `Remove Connector`
+
