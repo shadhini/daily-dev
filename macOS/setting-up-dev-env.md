@@ -107,6 +107,7 @@
 - `python`
   - `brew install python@3.11`
   - `python3.11`: opens python 3.11 interpreter
+  - `brew install uv`: a tool for managing multiple Python versions and virtual environments, useful for developers who need to test their code across different Python versions
 - `Docker Desktop`
   - download from the web: download the Apple Silicon version
   - prerequisites: 
